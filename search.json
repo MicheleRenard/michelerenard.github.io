@@ -1,0 +1,233 @@
+[
+  {
+    "objectID": "tools.html",
+    "href": "tools.html",
+    "title": "Tools & Resources",
+    "section": "",
+    "text": "I build small, self-contained tools when explaining something twice is slower than making the thing that explains it. Everything here is open and free to use."
+  },
+  {
+    "objectID": "tools.html#teaching-material",
+    "href": "tools.html#teaching-material",
+    "title": "Tools & Resources",
+    "section": "Teaching material",
+    "text": "Teaching material\n“Which Test, and Why?” — CLIF Foundational Workshop on Statistical Approaches, NUS, 28 August 2026. A 60-minute decision-first primer on statistical test selection for junior research assistants and coordinators. The workshop is accompanied by the interactive chooser above and a one-page reference sheet, with all worked examples given in both R and Python.\nProject HEATS interactive workshop — Indoor Air 2026, Singapore. Featured speaker with S. Schiavon, R. Mani, W. Zhang and X. Fan, presenting the HEATS framework for optimising sleep: heat exposure characterisation, protection of vulnerable groups, technical cooling and behavioural intervention."
+  },
+  {
+    "objectID": "tools.html#methods-i-use-and-why",
+    "href": "tools.html#methods-i-use-and-why",
+    "title": "Tools & Resources",
+    "section": "Methods I use, and why",
+    "text": "Methods I use, and why\nA short, opinionated list — the methods that come up most often in my work and the problem each one actually solves.\n\n\n\n\n\n\n\nMethod\nThe problem it solves\n\n\n\n\nLinear mixed-effects models\nRepeated nights within a person are not independent observations\n\n\nMundlak within/between decomposition\nSeparates “hot nights change what people do” from “heat changes what their body does”\n\n\nSegmented / piecewise regression with AIC knot search\nFinds where an exposure–response relationship actually bends, rather than assuming it is a straight line\n\n\nRestricted cubic splines\nLets the shape of a dose–response curve be estimated, not imposed\n\n\nCluster-robust standard errors and cluster bootstrap\nHonest uncertainty when observations come in groups\n\n\nPRISMA 2020 / PROSPERO registration\nMakes a review’s decisions checkable, and its scope fixed before the results are known"
+  },
+  {
+    "objectID": "tools.html#software",
+    "href": "tools.html#software",
+    "title": "Tools & Resources",
+    "section": "Software",
+    "text": "Software\nheatsviz — contributor to the internal visualisation package used across Project HEATS, providing a consistent figure grammar and export presets for manuscripts and slides in both R and Python.\nReproducible reporting — most of my analysis pipelines are Python (statsmodels, pandas, seaborn, python-docx, PyMuPDF) with R for figures (tidyverse, ggplot2), version controlled in Git and written up in Quarto.\n\nIf a tool here is useful to you, please use it — attribution is welcome but not required. If something is broken or wrong, tell me and I will fix it."
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "The peer-reviewed list below is generated directly from my ORCID record via Crossref, so it stays in step with the record of registration rather than drifting from it. Citation counts are on Google Scholar; BibTeX for everything here is available as a file."
+  },
+  {
+    "objectID": "publications.html#peer-reviewed",
+    "href": "publications.html#peer-reviewed",
+    "title": "Publications",
+    "section": "Peer-reviewed",
+    "text": "Peer-reviewed\n\n\n\nGeorge, C. V., Bell, Z., … Renard, M., … Lavelle, F. (2026). Pregnancy and postpartum nutritional wants and needs in athletes: a cross-sectional survey in the United Kingdom and Republic of Ireland. Performance Nutrition, 2(1), 14. doi:10.1186/s44410-026-00030-0\nRenard, M., Bell, Z., Jamshidvand, M., Mai, Z., McCloat, A., Mooney, E., Hollywood, L., & Lavelle, F. (2025). Domestic cooking and food behaviours during the COVID-19 pandemic and the cost-of-living crisis: A scoping review. Appetite, 216, 108311. doi:10.1016/j.appet.2025.108311\nCamp, R., Witard, O. C., Renard, M., Ó Catháin, C., & Lavelle, F. (2025). Do athletes cook? A systematic scoping review of culinary nutrition in athletes. Nutrition Bulletin. doi:10.1111/nbu.70012\nBuckley, J., Araujo, J. A., … Renard, M., … Zainol, I. (2024). How transparent are quantitative studies in contemporary technology education research? Instrument development and analysis. International Journal of Technology and Design Education, 34(2), 461–483. doi:10.1007/s10798-023-09827-9\nTaim, B. C., Ó Catháin, C., Renard, M., Elliott-Sale, K. J., Madigan, S., & Ní Chéilleachair, N. (2023). The prevalence of menstrual cycle disorders and menstrual cycle-related symptoms in female athletes: A systematic literature review. Sports Medicine, 53(10), 1963–1984. doi:10.1007/s40279-023-01871-8\nRenard, M., Kelly, D. T., Ní Chéilleachair, N., Lavelle, F., & Ó Catháin, C. (2023). Cooking and food skills confidence of team sport athletes in Ireland. Nutrition Bulletin, 48(3), 329–342. doi:10.1111/nbu.12625\nRenard, M., Anton-Solanas, A., Kelly, D. T., & Ó Catháin, C. (2022). Evaluation of nutrition knowledge in elite and sub-elite Gaelic football players. Science and Medicine in Football, 6(1), 82–88. doi:10.1080/24733938.2021.1883195\nBuckley, J., Adams, L., … Renard, M., … Zhang, L. (2022). An assessment of the transparency of contemporary technology education research employing interview-based methodologies. International Journal of Technology and Design Education, 32(4), 1963–1982. doi:10.1007/s10798-021-09695-1\nRenard, M., Kelly, D. T., Ní Chéilleachair, N., & Ó Catháin, C. (2021). How does the dietary intake of female field-based team sport athletes compare to dietary recommendations for health and performance? A systematic literature review. Nutrients, 13(4), 1235. doi:10.3390/nu13041235\nRenard, M., Kelly, D. T., Ní Chéilleachair, N., & Ó Catháin, C. (2020). Evaluation of nutrition knowledge in female Gaelic games players. Sports, 8(12), 154. doi:10.3390/sports8120154\nÓ Catháin, C., Fleming, J., Renard, M., & Kelly, D. T. (2020). Dietary intake of Gaelic football players during game preparation and recovery. Sports, 8(5), 62. doi:10.3390/sports8050062"
+  },
+  {
+    "objectID": "publications.html#under-review",
+    "href": "publications.html#under-review",
+    "title": "Publications",
+    "section": "Under review",
+    "text": "Under review\n\nRenard, M., Frei, M., Chua, Y. X., Zhang, W., Parkinson, T., Lo, J. C.-Y., Lee, J. K. W., Schiavon, S., & Miller, C. HEATS Exposure: Protocol for wearable and in-home monitoring of indoor environment, sleep and activity in Singapore. BMC Public Health. Under review\nRenard, M., Lavelle, F., Kelly, D. T., Ní Chéilleachair, N., & Ó Catháin, C. Dietary behaviours in Gaelic football: A mixed-methods exploration of players’ capability, opportunity and motivation. Performance Nutrition. Second round\nRenard, M., et al. Food insecurity, food behaviours, diet quality and mental wellbeing in the UK during the cost-of-living crisis. Public Health Nutrition. Under review"
+  },
+  {
+    "objectID": "publications.html#in-preparation",
+    "href": "publications.html#in-preparation",
+    "title": "Publications",
+    "section": "In preparation",
+    "text": "In preparation\n\nRenard, M., et al. Nighttime bedroom temperature and sleep continuity in Singapore homes — primary analysis of 122 participants across 10,303 person-nights. \nRenard, M., Chua, T., Tan, P. M. S., Ioannou, L., Kingma, B., Morabito, M., Gao, C., & Lee, J. K. W. A systematic review of heat health advisory tools and their effectiveness (113 studies). PROSPERO CRD420251052384.\nRenard, M., Angkanasirikul, W., Tan, P. M. S., Law, L. Y. L., & Lee, J. K. W. A systematic review to inform heat vulnerability index development in urban settings. PROSPERO CRD420261289729.\nKyaw, G. M. M., Renard, M., Fan, X., & Lee, J. K. W. A systematic review of adverse nighttime heat thresholds and associated effects on sleep, comfort and health. PROSPERO CRD420251009764.\nLoke, J. M. Q., Renard, M., Alhadad, S. B., & Lee, J. K. W. The role of fluid temperature and form in cooling: A systematic review and meta-analysis. PROSPERO CRD420251134107.\nMani, R., Tan, S. C. C., Renard, M., et al. Nighttime heat and humidity are associated with impaired sleep among outdoor workers in non-air-conditioned, multi-occupancy dormitories.\nRenard, M., et al. Physiological responses to controlled heat exposure in unacclimatised adults (Cooling Singapore 2.0)."
+  },
+  {
+    "objectID": "publications.html#selected-conference-presentations",
+    "href": "publications.html#selected-conference-presentations",
+    "title": "Publications",
+    "section": "Selected conference presentations",
+    "text": "Selected conference presentations\nInternational Conference on Environmental Ergonomics 2026 — Kuching, Malaysia, 17–21 August 2026. Six abstracts, including Near-body–room air temperature difference and total sleep time in Singapore (oral, AB59).\nIndoor Air 2026 — Singapore, June 2026. Three oral presentations, including Bedroom nighttime temperature, humidity and sleep duration in Singapore homes, plus a featured Project HEATS interactive workshop.\nHeat Early Warning System Symposium — Brisbane, August 2025. From generalised warnings to personalised guidance: synthesizing evidence to inform heat health advisory selection.\nThe Nutrition Society Congress 2024 — Belfast. Invited lecture as winner of the UK Postgraduate Competition: Optimising dietary behaviour — can sports nutrition research contribute to improvements in population health?\nFull conference record in the CV."
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Curriculum vitae",
+    "section": "",
+    "text": "Two versions, depending on what you need.\nFull academic CV (PDF) Short CV (PDF)\nOr read them in the browser: full · short.\nThe full academic CV is the comprehensive record — every publication with DOIs, the complete conference and teaching history, funding, teaching and service. The short CV is a three-page methods-and-impact version with five selected publications, for introductions and industry contexts."
+  },
+  {
+    "objectID": "cv.html#in-brief",
+    "href": "cv.html#in-brief",
+    "title": "Curriculum vitae",
+    "section": "In brief",
+    "text": "In brief\nNow — Research Fellow, Yong Loo Lin School of Medicine, National University of Singapore (Human Potential Translational Research Programme & Heat Resilience and Performance Centre), since April 2025. Analytical lead across Project HEATS and Cooling Singapore 2.0.\nBefore — Postdoctoral Research Associate, Department of Nutritional Sciences, King’s College London (2024–25). Assistant Lecturer in Exercise Physiology and in Sport & Exercise Nutrition, Atlantic Technological University, Sligo (2021–22). Health Advisor, Bupa UK (2018–19)."
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "Curriculum vitae",
+    "section": "Education",
+    "text": "Education\n\n\n\n\n\n\n\nPhD, Sport, Health and Exercise Sciences\nTechnological University of the Shannon, Ireland, 2024\n\n\nMSc, Applied Sports Nutrition\nSt Mary’s University Twickenham, UK, 2019\n\n\nBSc (Hons), Exercise, Nutrition and Health\nKingston University, UK, 2017\n\n\n\nDoctoral thesis: Determinants of Dietary Intake in Team Sport Athletes."
+  },
+  {
+    "objectID": "cv.html#honours",
+    "href": "cv.html#honours",
+    "title": "Curriculum vitae",
+    "section": "Honours",
+    "text": "Honours\nJSPS HOPE Fellow — Japan Society for the Promotion of Science, March 2026. Awarded on completion of the 17th JSPS HOPE Meeting with Nobel Laureates, Tsukuba, representing NUS Medicine.\nWinner, Postgraduate Competition — The Nutrition Society (UK & Ireland), July 2024, with an invited lecture at the International Congress in Belfast."
+  },
+  {
+    "objectID": "cv.html#funding",
+    "href": "cv.html#funding",
+    "title": "Curriculum vitae",
+    "section": "Funding",
+    "text": "Funding\nClimate Impact Science Research Programme, NRF Singapore & National Environment Agency (CISR-2024-2R-04) — Exertional Heat Vulnerability Index for Singapore. Research team member leading the evidence-synthesis workstream; protocol lead and review guarantor.\nNRF CREATE — Project HEATS. Named contributor delivering the statistical analysis plan and leading manuscript development for the heat exposure workstream."
+  },
+  {
+    "objectID": "cv.html#service",
+    "href": "cv.html#service",
+    "title": "Curriculum vitae",
+    "section": "Service",
+    "text": "Service\nLead for Strategic Partnerships, Business Development & External Relations, NUS Medicine Early Career Researchers Office (2026–27) · Education Subcommittee Lead, NUS Medicine Postdoctoral Association (since 2025) · Invited journal reviewer for Sports Medicine – Open, Environmental Science and Pollution Research International, Journal of Science in Sport and Exercise, and Journal of the International Society of Sports Nutrition."
+  },
+  {
+    "objectID": "collaborate.html",
+    "href": "collaborate.html",
+    "title": "Working with me",
+    "section": "",
+    "text": "The quickest way to reach me is mrenard@nus.edu.sg. This page sets out what I can usefully help with, so you can tell in about a minute whether it is worth an email."
+  },
+  {
+    "objectID": "collaborate.html#research-collaboration",
+    "href": "collaborate.html#research-collaboration",
+    "title": "Working with me",
+    "section": "Research collaboration",
+    "text": "Research collaboration\nI am most useful to a project that needs one of the following:\n\nStatistical analysis of longitudinal or clustered data — repeated measures, wearable and sensor streams, field studies where the same people are observed many times. Mixed-effects modelling, within/between decomposition, non-linear threshold estimation.\nExposure–response and threshold work — where the question is not “is there an effect” but “at what point, and for whom”.\nEvidence synthesis done properly — protocol development, PROSPERO registration, search strategy, risk of bias, and synthesis that survives peer review. I have registered four reviews and act as guarantor on one.\nTurning findings into guidance — translating modelled results into thresholds and advisory language that an agency can actually adopt.\n\nI work across environmental physiology, sleep, public health and nutritional science, and I am comfortable being the quantitative member of a team whose subject expertise is elsewhere."
+  },
+  {
+    "objectID": "collaborate.html#early-career-researchers",
+    "href": "collaborate.html#early-career-researchers",
+    "title": "Working with me",
+    "section": "Early career researchers",
+    "text": "Early career researchers\nMuch of my week is spent supporting teams of early career researchers — on analysis planning, coding practice, interpretation and scientific writing — across projects on dormitory heat and sleep, nighttime heat thresholds, cooling interventions and heat vulnerability index development.\nIf you are working in heat, sleep or environmental physiology and are stuck on a methods or analysis question, I am happy to talk. When you write, it helps enormously if you include the question that interests you and why, rather than a general expression of interest.\nI also support early career researchers more broadly through the NUS Medicine Postdoctoral Association, where I lead the Education Subcommittee, and through the Early Career Researchers Office."
+  },
+  {
+    "objectID": "collaborate.html#industry-and-institutional-partnerships",
+    "href": "collaborate.html#industry-and-institutional-partnerships",
+    "title": "Working with me",
+    "section": "Industry and institutional partnerships",
+    "text": "Industry and institutional partnerships\nI hold one of five Lead portfolios at the NUS Medicine Early Career Researchers Office, with responsibility for Strategic Partnerships, Business Development and External Relations (2026–27). In that role I represent the School’s early career researcher community in partnership discussions — placements, joint programmes and industry-facing activity.\nIf you are at an organisation considering a partnership with NUS Medicine that would involve early career researchers, this is a conversation I can start."
+  },
+  {
+    "objectID": "collaborate.html#advisory-and-review-work",
+    "href": "collaborate.html#advisory-and-review-work",
+    "title": "Working with me",
+    "section": "Advisory and review work",
+    "text": "Advisory and review work\nI review for journals across sports medicine and environmental health, and I am open to advisory work on heat-health guidance, protocol review and analysis planning where I can add something specific."
+  },
+  {
+    "objectID": "collaborate.html#media-and-speaking",
+    "href": "collaborate.html#media-and-speaking",
+    "title": "Working with me",
+    "section": "Media and speaking",
+    "text": "Media and speaking\nMy work on indoor heat and sleep has been covered in The Straits Times and Lianhe Zaobao. I am glad to speak to journalists about heat, sleep and health in tropical climates, and to give talks or workshops — particularly on statistical methods for researchers who did not train as statisticians.\n\nA note on what I will not be much use for. I am not a clinician and cannot advise on individual health. I do not take on analysis-only work with no scientific involvement. And if a request needs an answer this week, please say so in the first line — my calendar is usually the constraint, not my interest.\n\n\nEmail mrenard@nus.edu.sg · LinkedIn · ORCID"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Michèle Renard",
+    "section": "",
+    "text": "Research Fellow · Yong Loo Lin School of Medicine, National University of Singapore\n\nI am an environmental physiologist and quantitative researcher working on how heat shapes sleep, physiological strain and health in real-world populations.\n\nMost of my work sits where field measurement meets statistical modelling: large longitudinal wearable and sensor datasets, randomised cooling interventions in homes and dormitories, and systematic reviews that feed directly into national heat-health policy. I lead the statistical analysis for two national research programmes — Project HEATS and Cooling Singapore 2.0 — and work alongside teams of early career researchers across both.\nWorking with me Publications Curriculum vitae"
+  },
+  {
+    "objectID": "index.html#what-i-work-on",
+    "href": "index.html#what-i-work-on",
+    "title": "Michèle Renard",
+    "section": "What I work on",
+    "text": "What I work on\n\n\nIndoor heat and sleep\nHow bedroom temperature and humidity shape sleep continuity in tropical homes and dormitories — 122 participants, 10,303 person-nights, three field waves.\n\n\nHeat vulnerability and advisories\nEvidence synthesis behind Singapore’s Exertional Heat Vulnerability Index, and a review of how heat-health advisories are designed and whether they work.\n\n\nPhysiological strain in the heat\nLaboratory responses to controlled heat exposure in children, unacclimatised adults and older adults, translated into population-tailored guidance.\n\n\nBehaviour, nutrition and health\nEarlier and continuing work on the determinants of dietary intake — in athletes, and in UK households through the cost-of-living crisis."
+  },
+  {
+    "objectID": "index.html#currently",
+    "href": "index.html#currently",
+    "title": "Michèle Renard",
+    "section": "Currently",
+    "text": "Currently\n\nLeading the primary analysis of nighttime bedroom temperature and sleep continuity in Singapore homes, and the HEATS exposure protocol (BMC Public Health, under review).\nLeading the evidence-synthesis workstream for the eHVI programme (NRF/NEA award CISR-2024-2R-04) as protocol lead and review guarantor.\nLead for Strategic Partnerships, Business Development & External Relations, NUS Medicine Early Career Researchers Office (2026–27).\nFour PROSPERO-registered systematic reviews in progress across heat advisories, vulnerability indices, nighttime heat thresholds and cooling."
+  },
+  {
+    "objectID": "index.html#recent",
+    "href": "index.html#recent",
+    "title": "Michèle Renard",
+    "section": "Recent",
+    "text": "Recent\n\nMedia, June 2026 — Project HEATS findings were covered in The Straits Times and Lianhe Zaobao following the NRF CREATE Symposium, with the work cited by the Chairman of the National Research Foundation Singapore.\n\n\nAug 2026 — Six abstracts at the International Conference on Environmental Ergonomics (ICEE), Kuching, including an oral presentation on near-body–room air temperature difference and total sleep time.\nAug 2026 — Invited presenter, “Which Test, and Why?”, CLIF Foundational Workshop on Statistical Approaches, NUS.\nJun 2026 — Three oral presentations at Indoor Air 2026, Singapore, plus a featured Project HEATS interactive workshop.\nMar 2026 — Named a JSPS HOPE Fellow at the 17th JSPS HOPE Meeting with Nobel Laureates, Tsukuba, Japan."
+  },
+  {
+    "objectID": "index.html#elsewhere",
+    "href": "index.html#elsewhere",
+    "title": "Michèle Renard",
+    "section": "Elsewhere",
+    "text": "Elsewhere\nORCID · Google Scholar · ResearchGate · LinkedIn · GitHub · mrenard@nus.edu.sg"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "My research asks a deceptively simple question: how much heat is too much, and for whom? Answering it means measuring people where they actually live and sleep, modelling exposure–response relationships that are rarely linear, and then turning those relationships into thresholds that a public health agency can act on.\nThree strands run through the work — field measurement, statistical modelling, and evidence synthesis — and most projects use all three."
+  },
+  {
+    "objectID": "research.html#heats",
+    "href": "research.html#heats",
+    "title": "Research",
+    "section": "Project HEATS — Heat Exposure, Activity and Sleep",
+    "text": "Project HEATS — Heat Exposure, Activity and Sleep\nAnalytical lead · NRF CREATE programme · 2025–present\nProject HEATS characterises the indoor thermal environment of Singapore homes and dormitories and links it to objectively measured sleep. I lead the statistical analysis and manuscript development for the heat exposure workstream.\nDesign. Wearable and in-home monitoring across three field waves (Jun 2025 – Jul 2026): bedroom temperature, humidity, CO₂ and particulates alongside actigraphy-derived sleep outcomes. The primary analysis covers 122 participants and 10,303 person-nights.\nMethods. Linear mixed-effects models with Mundlak within/between decomposition, which lets us separate what a person does in response to a hot night (behavioural adaptation) from what heat does to them (physiological strain) — a distinction that a single pooled coefficient hides. Non-linear threshold work uses piecewise and segmented models with AIC-based knot search and restricted cubic splines, comparing dry-bulb temperature against composite indices (wet-bulb temperature, Heat Index) as predictors of sleep disruption.\nOutputs. A protocol paper under review at BMC Public Health; the primary sleep-continuity analysis in preparation; three oral presentations at Indoor Air 2026; a 30-night field trial of a dynamic “down-rise” bedroom cooling profile.\n\nFindings from this programme were covered nationally in The Straits Times and Lianhe Zaobao in June 2026, and cited by the Chairman of the National Research Foundation Singapore."
+  },
+  {
+    "objectID": "research.html#ehvi",
+    "href": "research.html#ehvi",
+    "title": "Research",
+    "section": "Exertional Heat Vulnerability Index (eHVI)",
+    "text": "Exertional Heat Vulnerability Index (eHVI)\nEvidence-synthesis lead · protocol lead and guarantor · NRF & NEA, CISR-2024-2R-04\nA Climate Impact Science Research programme building a heat vulnerability index for Singapore. I lead the evidence-synthesis workstream: I developed the systematic review protocol underpinning the index — search strategy, extraction framework and synthesis approach — and serve as guarantor of the review. I also chair the bi-weekly technical review and act as quality gate for the report blocks delivered to the funder.\nRegistered as PROSPERO CRD420261289729."
+  },
+  {
+    "objectID": "research.html#cs20",
+    "href": "research.html#cs20",
+    "title": "Research",
+    "section": "Cooling Singapore 2.0",
+    "text": "Cooling Singapore 2.0\nAnalytical lead, physiological workstream · NRF\nControlled laboratory heat-exposure studies across population groups who are usually treated as a single “general public” in advisory design: children, heat-unacclimatised adults and older adults. I model the physiological and perceptual responses and translate them into policy-relevant insight for tailoring national heat-health advisories — the point being that one threshold for everyone protects nobody particularly well."
+  },
+  {
+    "objectID": "research.html#reviews",
+    "href": "research.html#reviews",
+    "title": "Research",
+    "section": "Evidence synthesis",
+    "text": "Evidence synthesis\nFour PROSPERO-registered reviews, two of which I lead and two of which I support methodologically. Together they map what is actually known about nighttime heat and about the tools used to warn people.\n\n\n\n\n\n\n\n\nRegistration\nReview\nMy role\n\n\n\n\nCRD420261289729\nHeat vulnerability index development in urban settings\nLead author, protocol lead, guarantor\n\n\nCRD420251052384\nHeat health advisory tools and their effectiveness (113 studies)\nLead author\n\n\nCRD420251009764\nAdverse nighttime heat thresholds and effects on sleep, comfort and health (177 records)\nSecond author, methodological support\n\n\nCRD420251134107\nFluid temperature and form in cooling (60 studies, 644 participants)\nSecond author, methodological support\n\n\n\nMethodologically this work follows PRISMA 2020 and PRISMA-P, with MMAT and Cochrane Risk of Bias 2.0 appraisal, multilevel sensitivity models, publication bias assessment and certainty-of-evidence grading."
+  },
+  {
+    "objectID": "research.html#nutrition",
+    "href": "research.html#nutrition",
+    "title": "Research",
+    "section": "Behaviour, nutrition and health",
+    "text": "Behaviour, nutrition and health\nMy doctoral and postdoctoral work addressed a parallel question in a different domain: what determines what people actually eat, and which of those determinants can be moved?\n\nTeam sport athletes (PhD, TUS Athlone) — dietary intake against sports nutrition guidelines, nutrition knowledge, and cooking and food skills, using a mixed-methods design to identify modifiable behavioural targets.\nUK households in the cost-of-living crisis (King’s College London) — cooking and food behaviours, food insecurity, diet quality and mental wellbeing, combining hierarchical regression on large survey datasets with thematic analysis of focus group and open-text data.\n\nThe methodological thread — behaviour is a modifiable exposure, and you have to measure it well before you can change it — is the same one that runs through the heat work."
+  },
+  {
+    "objectID": "research.html#peer-review",
+    "href": "research.html#peer-review",
+    "title": "Research",
+    "section": "Peer review",
+    "text": "Peer review\nI review for Sports Medicine – Open, Environmental Science and Pollution Research International, the Journal of Science in Sport and Exercise, and the Journal of the International Society of Sports Nutrition."
+  }
+]
