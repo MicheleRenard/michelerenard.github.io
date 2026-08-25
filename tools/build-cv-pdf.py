@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
-Build the public PDF CVs from the private CV Markdown.
+Build the public CVs (PDF and HTML) from the private CV Markdown.
 
 Source of truth stays ~/Documents/CV/current/. This script never writes there.
 It reads the Markdown, applies the redactions listed in REDACTIONS below, and
-renders PDFs into cv/ using Quarto's Typst engine (no LaTeX required).
+renders into cv/ — PDF via Quarto's Typst engine (no LaTeX required) and a
+self-contained HTML version for reading in the browser. BOTH come from the same
+redacted source, so they cannot drift apart.
 
     python3 tools/build-cv-pdf.py
 
@@ -52,6 +54,13 @@ format:
     mainfont: "Georgia"
     colorlinks: true
     linkcolor: '#8F411F'
+  html:
+    theme: cosmo
+    embed-resources: true
+    toc: true
+    toc-depth: 2
+    fontsize: 1rem
+    linkcolor: '#8F411F'
 toc: false
 ---
 
@@ -80,24 +89,52 @@ def build(name):
         tmp = Path(tmp)
         qmd = tmp / f"{name}.qmd"
         qmd.write_text(HEADER + text)
-        r = subprocess.run(
-            [str(QUARTO), "render", str(qmd), "--to", "typst"],
-            capture_output=True, text=True,
-        )
-        if r.returncode != 0:
-            print(r.stdout[-3000:], r.stderr[-3000:], file=sys.stderr)
-            sys.exit(f"quarto failed on {name}")
-        pdf = tmp / f"{name}.pdf"
-        if not pdf.exists():
-            sys.exit(f"no PDF produced for {name}")
         OUT.mkdir(exist_ok=True)
-        shutil.copy(pdf, OUT / f"{name}.pdf")
-        kb = (OUT / f"{name}.pdf").stat().st_size // 1024
-        print(f"    → cv/{name}.pdf ({kb} KB)\n")
+
+        for fmt, ext in (("typst", "pdf"), ("html", "html")):
+            r = subprocess.run(
+                [str(QUARTO), "render", str(qmd), "--to", fmt],
+                capture_output=True, text=True,
+            )
+            if r.returncode != 0:
+                print(r.stdout[-3000:], r.stderr[-3000:], file=sys.stderr)
+                sys.exit(f"quarto failed on {name} ({fmt})")
+            produced = tmp / f"{name}.{ext}"
+            if not produced.exists():
+                sys.exit(f"no {ext.upper()} produced for {name}")
+            shutil.copy(produced, OUT / f"{name}.{ext}")
+            kb = (OUT / f"{name}.{ext}").stat().st_size // 1024
+            print(f"    → cv/{name}.{ext} ({kb} KB)")
+    print()
+
+
+def verify():
+    """Nothing redacted may survive into anything in cv/. Fail loudly if it does."""
+    import fitz
+
+    tripwires = ["8058", "9233", "Permanent Resident", "SEA Games", "Sport Singapore"]
+    bad = []
+    for f in sorted(OUT.iterdir()):
+        if f.suffix == ".pdf":
+            text = "".join(page.get_text() for page in fitz.open(f))
+        elif f.suffix in (".html", ".md"):
+            text = f.read_text(errors="ignore")
+        else:
+            continue
+        for t in tripwires:
+            if t in text:
+                bad.append(f"{f.name}: contains {t!r}")
+    if bad:
+        print("REDACTION CHECK FAILED:", file=sys.stderr)
+        for b in bad:
+            print(f"  {b}", file=sys.stderr)
+        sys.exit(1)
+    print("Redaction check passed: no private details in anything under cv/.")
 
 
 if __name__ == "__main__":
     print(f"Reading {CV_SRC}\n")
     for n in ("master-cv", "short-cv"):
         build(n)
-    print("Done. Check both PDFs before publishing — see OPEN-ITEMS.md.")
+    verify()
+    print("Done. Check the output before publishing — see OPEN-ITEMS.md.")
