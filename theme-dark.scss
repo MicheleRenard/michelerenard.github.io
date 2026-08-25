@@ -1,0 +1,58 @@
+/*-- scss:defaults --*/
+
+// ---------------------------------------------------------------------------
+// Dark palette. Same roles as theme-light.scss, same variable names, so
+// theme-rules.scss works unchanged against either.
+//
+// The accents are lifted and desaturated relative to the light theme: an ember
+// that reads as warm rather than muddy against near-black, and a night blue
+// bright enough to pass contrast on body text.
+// ---------------------------------------------------------------------------
+$paper:        #15181E;
+$sand:         #1E232B;
+$border:       #2F3742;
+$ink:          #ECEAE5;
+$body:         #C4CAD3;
+$muted:        #8B939F;
+$ember:        #E28A5E;
+$ember-dark:   #EFA783;
+$night:        #74A9BC;
+
+$web-font-path: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap";
+
+$font-family-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$headings-font-family:   "Source Serif 4", Georgia, "Times New Roman", serif;
+
+$body-bg:     $paper;
+$body-color:  $body;
+$primary:     $ember;
+$link-color:  $ember-dark;
+$font-size-root: 17px;
+$line-height-base: 1.65;
+$headings-font-weight: 600;
+$headings-color: $ink;
+
+$navbar-bg: $paper;
+$navbar-light-color: $body;
+$navbar-light-hover-color: $ember;
+$navbar-light-active-color: $ember;
+$navbar-dark-color: $body;
+$navbar-dark-hover-color: $ember;
+$navbar-dark-active-color: $ember;
+$footer-bg: $sand;
+
+$toc-color: $muted;
+$toc-font-size: 0.82rem;
+
+// Bootstrap surfaces that would otherwise stay light
+$table-color: $body;
+$table-border-color: $border;
+$card-bg: $sand;
+$input-bg: $sand;
+$input-color: $body;
+$input-border-color: $border;
+$dropdown-bg: $sand;
+$dropdown-link-color: $body;
+$dropdown-link-hover-bg: $border;
+$code-color: $ember-dark;
+$code-bg: $sand;

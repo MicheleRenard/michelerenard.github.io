@@ -11,6 +11,7 @@ website:
     Environmental physiologist and quantitative researcher at the National
     University of Singapore, working on heat, sleep and population health.
   favicon: images/favicon.png
+  image: images/og-image.png
   navbar:
     background: light
     logo: ""
@@ -22,8 +23,10 @@ website:
         text: Research
       - href: publications.qmd
         text: Publications
+      - href: heat-and-sleep.qmd
+        text: Heat & sleep
       - href: tools.qmd
-        text: Tools & Resources
+        text: Tools
       - href: collaborate.qmd
         text: Working with me
       - href: cv.qmd
@@ -50,8 +53,8 @@ website:
 format:
   html:
     theme:
-      - cosmo
-      - styles.scss
+      light: [cosmo, theme-light.scss, theme-rules.scss]
+      dark:  [cosmo, theme-dark.scss, theme-rules.scss]
     toc: true
     toc-depth: 3
     toc-title: "On this page"

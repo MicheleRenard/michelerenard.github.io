@@ -5,8 +5,10 @@ subtitle: "Updated August 2026"
 
 Two versions, depending on what you need.
 
-[Full academic CV](cv/master-cv.html){.btn-ember}
-[Short CV](cv/short-cv.html){.btn-outline-ink}
+[Full academic CV (PDF)](cv/master-cv.pdf){.btn-ember}
+[Short CV (PDF)](cv/short-cv.pdf){.btn-outline-ink}
+
+[Or read them in the browser: [full](cv/master-cv.html) · [short](cv/short-cv.html).]{.subtitle}
 
 The **full academic CV** is the comprehensive record — every publication with
 DOIs, the complete conference and teaching history, funding, teaching and

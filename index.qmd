@@ -1,6 +1,10 @@
 ---
 pagetitle: "Michèle Renard — Heat, sleep and population health"
 description-meta: "Environmental physiologist and quantitative researcher at the National University of Singapore."
+# Without this, Quarto picks the first image on the page (the headshot) as the
+# social preview. The purpose-built card is better.
+image: images/og-image.png
+image-alt: "Michèle Renard — Research Fellow, Yong Loo Lin School of Medicine, National University of Singapore"
 toc: false
 ---
 
@@ -80,7 +84,9 @@ athletes, and in UK households through the cost-of-living crisis.
 [*The Straits Times*](https://www.straitstimes.com/singapore/environment/whats-the-temperature-in-the-bedroom-in-spore-a-muggy-28-deg-c-says-new-study-on-residents)
 and [*Lianhe Zaobao*](https://www.zaobao.com.sg/news/singapore/story20260625-9260617)
 following the NRF CREATE Symposium, with the work cited by the Chairman of the
-National Research Foundation Singapore.
+National Research Foundation Singapore. There is a
+[plain-language summary of the findings](heat-and-sleep.qmd), with a media kit,
+for anyone writing about this work.
 :::
 
 - **Aug 2026** — Six abstracts at the International Conference on Environmental

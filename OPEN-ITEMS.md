@@ -11,6 +11,17 @@ renders without them, but should not be published until they are resolved.
 - [ ] **Favicon.** `images/favicon.png` is a generated placeholder mark. Replace
       or remove.
 
+- [ ] **Every number on `heat-and-sleep.qmd` needs your sign-off.** I wrote that
+      page from what is already public — the 28°C figure from *The Straits Times*,
+      the ~10 minutes per 1°C from *Lianhe Zaobao*, and the 122 participants /
+      10,303 person-nights already on the site. The interpretation, the
+      "what this does not show" section and the threshold discussion are my
+      wording from your CV and research description, not quotes from you. Read it
+      as if a journalist were about to quote every sentence, because that is its
+      purpose.
+- [ ] **The media kit bio is written without pronouns**, because I do not know
+      which you use. Set them, or leave it as is — it reads fine either way.
+
 ## Needs confirmation
 
 - [ ] **Every claim on `collaborate.qmd` is a draft written from the CV, not from
@@ -27,7 +38,7 @@ renders without them, but should not be published until they are resolved.
       is already in press releases and public abstracts — but confirm that the
       "122 participants / 10,303 person-nights" framing is fine to state publicly
       before the primary analysis is published.
-- [ ] **The linked CV files still say more than the site does.** The site no
+- [ ] **The public CV PDFs still say more than the site does.** The site no
       longer claims direct supervision and no longer mentions the Sport Singapore
       SEA Games review — but `cv/master-cv.html` and `cv/short-cv.html`, which the
       CV page links publicly, still carry both, along with named supervisees. Those

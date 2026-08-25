@@ -10,17 +10,23 @@ truth; `_site/` is generated output and is never hand-edited.
 
 ```
 Website/
-├── _quarto.yml      site config — navbar, footer, theme, metadata
-├── styles.scss      the theme. Palette and typography live at the top.
-├── index.qmd        home / about
-├── research.qmd     research programmes and methods
-├── publications.qmd publication list
-├── tools.qmd        open tools and teaching material
-├── collaborate.qmd  "working with me"
-├── cv.qmd           CV landing page + summary
-├── cv/              built CV HTML, copied from ../CV/build/
-├── images/          profile photo (profile.jpg), favicon
-└── _site/           GENERATED. Never edit; gitignored.
+├── _quarto.yml           site config — navbar, footer, theme, metadata
+├── theme-light.scss      light palette (variables only)
+├── theme-dark.scss       dark palette — same variable names, different values
+├── theme-rules.scss      all styling rules, shared by both themes
+├── index.qmd             home / about
+├── research.qmd          research programmes and methods
+├── publications.qmd      publication list
+├── heat-and-sleep.qmd    plain-language explainer + media kit
+├── tools.qmd             open tools and teaching material
+├── collaborate.qmd       "working with me"
+├── cv.qmd                CV landing page + summary
+├── _publications-generated.md   GENERATED from ORCID. Never hand-edit.
+├── references.bib        GENERATED from ORCID. Reusable BibTeX.
+├── tools/                maintenance scripts (see below)
+├── cv/                   public CV PDFs and HTML
+├── images/               profile photo, favicon, social preview card
+└── _site/                GENERATED. Never edit; gitignored.
 ```
 
 ## Build and preview
@@ -57,6 +63,36 @@ A custom domain (e.g. `michelerenard.com`) can be added later by putting the
 domain in a `CNAME` file at the repo root and pointing DNS at GitHub. Nothing
 else changes.
 
+## The three maintenance scripts
+
+All three are safe to re-run at any time; each prints what it did.
+
+```bash
+python3 tools/update-publications.py   # ORCID + Crossref → publication list
+python3 tools/build-cv-pdf.py          # ../CV/current/*.md → cv/*.pdf
+python3 tools/make-og-image.py         # → images/og-image.png
+```
+
+**`update-publications.py`** reads the public ORCID record, resolves each DOI
+against Crossref, and writes both `_publications-generated.md` (what the site
+renders) and `references.bib` (for reuse). Publishers deposit inconsistent
+metadata, so the script carries three small correction tables — `NAME_FIXES` for
+surnames split across the wrong field, `PROTECTED` for words that survive the
+conversion to sentence case, and `OVERRIDES` for per-DOI fixes. It also carries
+`EXCLUDE` (preprints, errata and abstract collections that should not appear as
+publications) and `ORCID_GAPS` (papers on the CV but missing from ORCID). Read
+what it prints: it tells you what it excluded and why.
+
+**`build-cv-pdf.py`** renders the public CV PDFs from the private Markdown via
+Quarto's Typst engine — no LaTeX needed. It never writes to the CV repo. Every
+difference between the private CV and the public PDF is declared in the
+`REDACTIONS` list at the top of the script, with a reason, and the script prints
+each one as it applies it.
+
+**`make-og-image.py`** builds the 1200×630 card that LinkedIn, Slack and email
+clients show when the link is shared. Re-run it if the palette, role line or
+photo changes.
+
 ## Keeping it current
 
 Tie site updates to the **CV cadence — February and August** (see
@@ -65,21 +101,25 @@ site is the last step of the same cycle:
 
 1. Update `../CV/current/master-cv.md` and `short-cv.md` as usual, and run
    `../CV/build.sh`.
-2. Copy the rebuilt CV HTML across: `cp ../CV/build/*.html cv/`.
-3. Reconcile `publications.qmd` against the master CV — peer-reviewed list,
-   under review, in preparation.
+2. `cp ../CV/build/*.html cv/` and `python3 tools/build-cv-pdf.py`.
+3. `python3 tools/update-publications.py` — the peer-reviewed list looks after
+   itself. Then update the **under review** and **in preparation** sections of
+   `publications.qmd` by hand, since those have no DOI to fetch.
 4. Update the **Currently** and **Recent** sections of `index.qmd`. These are the
    two blocks that make a site look alive or abandoned; if nothing else gets
    done, do these.
-5. `quarto render`, check locally, then `quarto publish gh-pages`.
+5. `quarto render`, check locally in both light and dark, then
+   `quarto publish gh-pages`.
 
 Off-cycle, update whenever something lands that you would want on a CV tomorrow
 — an accepted paper, a grant, a new role, media coverage.
 
 ## Design notes
 
-The theme is a single SCSS file with everything configurable in the first 25
-lines. The palette is deliberately narrow: warm off-white paper, deep slate ink,
+The theme is split three ways: `theme-light.scss` and `theme-dark.scss` define
+the same set of variables with different values, and `theme-rules.scss` holds
+every rule. Nothing in the rules file hard-codes a colour, which is what lets one
+set of rules serve both themes — keep it that way when editing. The palette is deliberately narrow: warm off-white paper, deep slate ink,
 one ember accent for heat and one teal-slate secondary for night. Two accents,
 used sparingly, so the typography carries the page.
 
