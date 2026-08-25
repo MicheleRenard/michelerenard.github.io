@@ -1,7 +1,16 @@
-# Open items — before going live
+# Open items
 
-Everything here needs Michèle's decision or input. The site is complete and
-renders without them, but should not be published until they are resolved.
+**The site went live on 25 Aug 2026 at <https://michelerenard.github.io>.**
+Everything below is still outstanding and now applies to a public page, so these
+are live-site edits rather than pre-launch checks.
+
+## Do these first — they are public now
+
+- [ ] **`collaborate.qmd` is my words, not yours** — see below. It is the page a
+      prospective collaborator or partner reads, and it is currently a draft
+      written from your CV.
+- [ ] **NUS Medicine communications check** — see below. Worth doing now rather
+      than later.
 
 ## Needs content
 

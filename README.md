@@ -4,7 +4,9 @@ Public site for Michèle Renard, built with [Quarto](https://quarto.org) and
 deployed to GitHub Pages. The `.qmd` files in this directory are the source of
 truth; `_site/` is generated output and is never hand-edited.
 
-**Status: prototype.** Not yet published. See *Before going live* below.
+**Status: live** at <https://michelerenard.github.io> since 25 Aug 2026. Source on
+the `main` branch; the rendered site is pushed to `gh-pages` by
+`quarto publish gh-pages`. Outstanding items are in `OPEN-ITEMS.md`.
 
 ## Layout
 
@@ -48,16 +50,19 @@ quarto render      # one-off build into _site/
 The site is designed to live at `https://michelerenard.github.io`, which requires
 a repository named exactly `michelerenard.github.io`.
 
+The repo exists and Pages is configured to serve the `gh-pages` branch. To
+publish a change:
+
 ```bash
-gh repo create michelerenard.github.io --public --source=. --remote=origin
-git add -A && git commit -m "Initial site"
-git push -u origin main
-quarto publish gh-pages
+git add -A && git commit -m "..." && git push       # source
+python3 -c "" ; quarto publish gh-pages --no-prompt  # rendered site
 ```
 
-`quarto publish gh-pages` builds the site and pushes `_site/` to a `gh-pages`
-branch, then GitHub serves it. First run asks for confirmation and configures the
-branch; later runs are a single command.
+Two gotchas, both already handled but worth knowing if this is ever rebuilt:
+`quarto publish gh-pages --no-prompt` fails unless the `gh-pages` branch already
+exists (create it as an empty orphan branch first), and GitHub defaults Pages to
+serving `main`, which serves the *source* rather than the built site — it has
+been switched to `gh-pages`.
 
 A custom domain (e.g. `michelerenard.com`) can be added later by putting the
 domain in a `CNAME` file at the repo root and pointing DNS at GitHub. Nothing
