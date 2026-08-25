@@ -1,0 +1,70 @@
+---
+title: "Tools & Resources"
+subtitle: "Open teaching material and small pieces of software"
+---
+
+I build small, self-contained tools when explaining something twice is slower
+than making the thing that explains it. Everything here is open and free to use.
+
+::: {.grid-cards}
+::: {.card-item}
+#### Which Test, and Why?
+An interactive statistical test chooser built for the CLIF Foundational
+Workshop at NUS. Decision-first: you describe your data and design, it shows
+the appropriate test with worked examples in both R and Python.
+
+[Open the chooser →](https://michelerenard.github.io/clif-chooser/){.no-rule}
+:::
+
+::: {.card-item .night}
+#### ICEE 2026 programme
+A single-page, searchable schedule for the International Conference on
+Environmental Ergonomics 2026 in Kuching, with full plenary and symposium
+abstracts.
+
+[Open the programme →](https://michelerenard.github.io/icee-2026/){.no-rule}
+:::
+:::
+
+## Teaching material
+
+**"Which Test, and Why?"** — CLIF Foundational Workshop on Statistical
+Approaches, NUS, 28 August 2026. A 60-minute decision-first primer on
+statistical test selection for junior research assistants and coordinators.
+The workshop is accompanied by the interactive chooser above and a one-page
+reference sheet, with all worked examples given in both R and Python.
+
+**Project HEATS interactive workshop** — Indoor Air 2026, Singapore. Featured
+speaker with S. Schiavon, R. Mani, W. Zhang and X. Fan, presenting the HEATS
+framework for optimising sleep: heat exposure characterisation, protection of
+vulnerable groups, technical cooling and behavioural intervention.
+
+## Methods I use, and why
+
+A short, opinionated list — the methods that come up most often in my work and
+the problem each one actually solves.
+
+| Method | The problem it solves |
+|---|---|
+| Linear mixed-effects models | Repeated nights within a person are not independent observations |
+| Mundlak within/between decomposition | Separates "hot nights change what people do" from "heat changes what their body does" |
+| Segmented / piecewise regression with AIC knot search | Finds where an exposure–response relationship actually bends, rather than assuming it is a straight line |
+| Restricted cubic splines | Lets the shape of a dose–response curve be estimated, not imposed |
+| Cluster-robust standard errors and cluster bootstrap | Honest uncertainty when observations come in groups |
+| PRISMA 2020 / PROSPERO registration | Makes a review's decisions checkable, and its scope fixed before the results are known |
+
+## Software
+
+**`heatsviz`** — contributor to the internal visualisation package used across
+Project HEATS, providing a consistent figure grammar and export presets for
+manuscripts and slides in both R and Python.
+
+**Reproducible reporting** — most of my analysis pipelines are Python
+(statsmodels, pandas, seaborn, python-docx, PyMuPDF) with R for figures
+(tidyverse, ggplot2), version controlled in Git and written up in Quarto.
+
+::: {.note-box}
+If a tool here is useful to you, please use it — attribution is welcome but not
+required. If something is broken or wrong, [tell me](mailto:mrenard@nus.edu.sg)
+and I will fix it.
+:::

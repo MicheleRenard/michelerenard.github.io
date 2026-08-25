@@ -1,0 +1,67 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+
+website:
+  title: "Michèle Renard"
+  site-url: https://michelerenard.github.io
+  description: >
+    Environmental physiologist and quantitative researcher at the National
+    University of Singapore, working on heat, sleep and population health.
+  favicon: images/favicon.png
+  navbar:
+    background: light
+    logo: ""
+    title: "Michèle Renard"
+    left:
+      - href: index.qmd
+        text: About
+      - href: research.qmd
+        text: Research
+      - href: publications.qmd
+        text: Publications
+      - href: tools.qmd
+        text: Tools & Resources
+      - href: collaborate.qmd
+        text: Working with me
+      - href: cv.qmd
+        text: CV
+    right:
+      - icon: envelope
+        href: mailto:mrenard@nus.edu.sg
+        aria-label: Email
+      - icon: linkedin
+        href: https://www.linkedin.com/in/michelerenard/
+        aria-label: LinkedIn
+      - icon: github
+        href: https://github.com/MicheleRenard
+        aria-label: GitHub
+  page-footer:
+    border: true
+    left: |
+      © 2026 Michèle Renard · [ORCID 0000-0003-4517-1316](https://orcid.org/0000-0003-4517-1316)
+    right: |
+      Built with [Quarto](https://quarto.org). Source on [GitHub](https://github.com/MicheleRenard).
+  open-graph: true
+  twitter-card: false
+
+format:
+  html:
+    theme:
+      - cosmo
+      - styles.scss
+    toc: true
+    toc-depth: 3
+    toc-title: "On this page"
+    anchor-sections: true
+    smooth-scroll: true
+    link-external-newwindow: true
+    grid:
+      sidebar-width: 240px
+      body-width: 900px
+      margin-width: 240px
+
+execute:
+  freeze: auto

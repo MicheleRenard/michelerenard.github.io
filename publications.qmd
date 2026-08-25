@@ -1,0 +1,65 @@
+---
+title: "Publications"
+subtitle: "Eleven peer-reviewed publications · three under review · six in preparation"
+---
+
+The authoritative, always-current list lives on
+[ORCID](https://orcid.org/0000-0003-4517-1316) and
+[Google Scholar](https://scholar.google.com/citations?user=nyVJS9AAAAAJ).
+This page is regenerated from the same source as my CV.
+
+## Peer-reviewed
+
+::: {.pub-list}
+1. George, C. V., Bell, Z., **Renard, M.**, Brown, E., Kloskowska, P., Edwards, L., Newman, A., Rauber, A., Flynn, A. C., & Lavelle, F. (2026). Pregnancy and postpartum nutritional wants and needs in athletes: A cross-sectional survey in the United Kingdom and Republic of Ireland. *Performance Nutrition*, **2**(1), 14. [doi:10.1186/s44410-026-00030-0](https://doi.org/10.1186/s44410-026-00030-0)
+
+2. **Renard, M.**, Bell, Z., Jamshidvand, M., Mai, Z., McCloat, A., Mooney, E., Hollywood, L., & Lavelle, F. (2025). Domestic cooking and food behaviours during the COVID-19 pandemic and the cost-of-living crisis: A scoping review. *Appetite*, **216**, 108311. [doi:10.1016/j.appet.2025.108311](https://doi.org/10.1016/j.appet.2025.108311)
+
+3. Camp, R., Witard, O. C., **Renard, M.**, Ó Catháin, C., & Lavelle, F. (2025). Do athletes cook? A systematic scoping review of culinary nutrition in athletes. *Nutrition Bulletin*. [doi:10.1111/nbu.70012](https://doi.org/10.1111/nbu.70012)
+
+4. Buckley, J., Araujo, J. A., … **Renard, M.**, … Zainol, I. (2024). How transparent are quantitative studies in contemporary technology education research? Instrument development and analysis. *International Journal of Technology and Design Education*, **34**(2), 461–483. [doi:10.1007/s10798-023-09827-9](https://doi.org/10.1007/s10798-023-09827-9)
+
+5. **Renard, M.**, Kelly, D. T., Ní Chéilleachair, N., Lavelle, F., & Ó Catháin, C. (2023). Cooking and food skills confidence of team sport athletes in Ireland. *Nutrition Bulletin*, **48**(3), 329–342. [doi:10.1111/nbu.12625](https://doi.org/10.1111/nbu.12625)
+
+6. Taim, B. C., Ó Catháin, C., **Renard, M.**, Elliott-Sale, K. J., Madigan, S., & Ní Chéilleachair, N. (2023). The prevalence of menstrual cycle disorders and menstrual cycle-related symptoms in female athletes: A systematic literature review. *Sports Medicine*, **53**(10), 1963–1984. [doi:10.1007/s40279-023-01871-8](https://doi.org/10.1007/s40279-023-01871-8)
+
+7. Buckley, J., Adams, L., … **Renard, M.**, … Zhang, L. (2022). An assessment of the transparency of contemporary technology education research employing interview-based methodologies. *International Journal of Technology and Design Education*, **32**(4), 1963–1982. [doi:10.1007/s10798-021-09695-1](https://doi.org/10.1007/s10798-021-09695-1)
+
+8. **Renard, M.**, Anton-Solanas, A., Kelly, D. T., & Ó Catháin, C. (2022). Evaluation of nutrition knowledge in elite and sub-elite Gaelic football players. *Science and Medicine in Football*, **6**(1), 82–88. [doi:10.1080/24733938.2021.1883195](https://doi.org/10.1080/24733938.2021.1883195)
+
+9. **Renard, M.**, Kelly, D. T., Ní Chéilleachair, N., & Ó Catháin, C. (2021). How does the dietary intake of female field-based team sport athletes compare to dietary recommendations for health and performance? A systematic literature review. *Nutrients*, **13**(4), 1235. [doi:10.3390/nu13041235](https://doi.org/10.3390/nu13041235)
+
+10. **Renard, M.**, Kelly, D. T., Ní Chéilleachair, N., & Ó Catháin, C. (2020). Evaluation of nutrition knowledge in female Gaelic games players. *Sports*, **8**(12), 154. [doi:10.3390/sports8120154](https://doi.org/10.3390/sports8120154)
+
+11. Ó Catháin, C., Fleming, J., **Renard, M.**, & Kelly, D. T. (2020). Dietary intake of Gaelic football players during game preparation and recovery. *Sports*, **8**(5), 62. [doi:10.3390/sports8050062](https://doi.org/10.3390/sports8050062)
+:::
+
+## Under review
+
+- **Renard, M.**, Frei, M., Chua, Y. X., Zhang, W., Parkinson, T., Lo, J. C.-Y., Lee, J. K. W., Schiavon, S., & Miller, C. HEATS Exposure: Protocol for wearable and in-home monitoring of indoor environment, sleep and activity in Singapore. ***BMC Public Health***. [Under review]{.status-tag}
+
+- **Renard, M.**, Lavelle, F., Kelly, D. T., Ní Chéilleachair, N., & Ó Catháin, C. Dietary behaviours in Gaelic football: A mixed-methods exploration of players' capability, opportunity and motivation. ***Performance Nutrition***. [Second round]{.status-tag}
+
+- **Renard, M.**, et al. Food insecurity, food behaviours, diet quality and mental wellbeing in the UK during the cost-of-living crisis. ***Public Health Nutrition***. [Under review]{.status-tag}
+
+## In preparation
+
+- **Renard, M.**, et al. Nighttime bedroom temperature and sleep continuity in Singapore homes — primary analysis of 122 participants across 10,303 person-nights.
+- **Renard, M.**, Chua, Y. X., Tan, P. M. S., Ioannou, L., Kingma, B., Morabito, M., Gao, C., & Lee, J. K. W. A systematic review of heat health advisory tools and their effectiveness (113 studies). PROSPERO CRD420251052384.
+- **Renard, M.**, Angkanasirikul, W., Tan, P. M. S., Law, L. Y. L., & Lee, J. K. W. A systematic review to inform heat vulnerability index development in urban settings. PROSPERO CRD420261289729.
+- Kyaw, G. M. M., **Renard, M.**, Fan, X., & Lee, J. K. W. A systematic review of adverse nighttime heat thresholds and associated effects on sleep, comfort and health. PROSPERO CRD420251009764.
+- Loke, J. M. Q., **Renard, M.**, Alhadad, S. B., & Lee, J. K. W. The role of fluid temperature and form in cooling: A systematic review and meta-analysis. PROSPERO CRD420251134107.
+- Mani, R., Tan, S. C. C., **Renard, M.**, et al. Nighttime heat and humidity are associated with impaired sleep among outdoor workers in non-air-conditioned, multi-occupancy dormitories.
+- **Renard, M.**, et al. Physiological responses to controlled heat exposure in unacclimatised adults (Cooling Singapore 2.0).
+
+## Selected conference presentations
+
+**International Conference on Environmental Ergonomics 2026** — Kuching, Malaysia, 17–21 August 2026. Seven abstracts, including *Near-body–room air temperature difference and total sleep time in Singapore* (oral, AB59).
+
+**Indoor Air 2026** — Singapore, June 2026. Three oral presentations, including *Bedroom nighttime temperature, humidity and sleep duration in Singapore homes*, plus a featured Project HEATS interactive workshop.
+
+**Heat Early Warning System Symposium** — Brisbane, August 2025. *From generalised warnings to personalised guidance: synthesizing evidence to inform heat health advisory selection.*
+
+**The Nutrition Society Congress 2024** — Belfast. Invited lecture as winner of the UK Postgraduate Competition: *Optimising dietary behaviour — can sports nutrition research contribute to improvements in population health?*
+
+[Full conference record in the [CV](cv.qmd).]{.subtitle}

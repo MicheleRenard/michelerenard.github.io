@@ -1,0 +1,83 @@
+---
+title: "Working with me"
+subtitle: "Collaboration, supervision, partnerships and media"
+---
+
+The quickest way to reach me is [mrenard@nus.edu.sg](mailto:mrenard@nus.edu.sg).
+This page sets out what I can usefully help with, so you can tell in about a
+minute whether it is worth an email.
+
+---
+
+## Research collaboration
+
+I am most useful to a project that needs one of the following:
+
+- **Statistical analysis of longitudinal or clustered data** — repeated
+  measures, wearable and sensor streams, field studies where the same people are
+  observed many times. Mixed-effects modelling, within/between decomposition,
+  non-linear threshold estimation.
+- **Exposure–response and threshold work** — where the question is not
+  "is there an effect" but "at what point, and for whom".
+- **Evidence synthesis done properly** — protocol development, PROSPERO
+  registration, search strategy, risk of bias, and synthesis that survives peer
+  review. I have registered four reviews and act as guarantor on one.
+- **Turning findings into guidance** — translating modelled results into
+  thresholds and advisory language that an agency can actually adopt.
+
+I work across environmental physiology, sleep, public health and nutritional
+science, and I am comfortable being the quantitative member of a team whose
+subject expertise is elsewhere.
+
+## Prospective students and early career researchers
+
+I currently supervise three doctoral candidates and one postdoctoral researcher
+at NUS, working on dormitory heat and sleep, nighttime heat thresholds, cooling
+interventions, and heat vulnerability index development.
+
+If you are considering postgraduate work in heat, sleep or environmental
+physiology, I am happy to talk — including about whether the project you have in
+mind is the right one. When you write, it helps enormously if you include what
+question interests you and why, rather than a general expression of interest.
+
+I also mentor early career researchers through the **NUS Medicine Postdoctoral
+Association**, where I lead the Education Subcommittee, and through the **Early
+Career Researchers Office**.
+
+## Industry and institutional partnerships
+
+I hold one of five Lead portfolios at the **NUS Medicine Early Career Researchers
+Office**, with responsibility for **Strategic Partnerships, Business Development
+and External Relations** (2026–27). In that role I represent the School's early
+career researcher community in partnership discussions — placements, joint
+programmes and industry-facing activity.
+
+If you are at an organisation considering a partnership with NUS Medicine that
+would involve early career researchers, this is a conversation I can start.
+
+## Advisory and review work
+
+I serve as an external reviewer for **Sport Singapore's** SEA Games heat
+resilience programme, and I review for journals across sports medicine and
+environmental health. I am open to advisory work on heat-health guidance,
+protocol review and analysis planning where I can add something specific.
+
+## Media and speaking
+
+My work on indoor heat and sleep has been covered in *The Straits Times* and
+*Lianhe Zaobao*. I am glad to speak to journalists about heat, sleep and health
+in tropical climates, and to give talks or workshops — particularly on
+statistical methods for researchers who did not train as statisticians.
+
+::: {.note-box}
+**A note on what I will not be much use for.** I am not a clinician and cannot
+advise on individual health. I do not take on analysis-only work with no
+scientific involvement. And if a request needs an answer this week, please say
+so in the first line — my calendar is usually the constraint, not my interest.
+:::
+
+---
+
+[**Email** mrenard@nus.edu.sg](mailto:mrenard@nus.edu.sg) ·
+[LinkedIn](https://www.linkedin.com/in/michelerenard/) ·
+[ORCID](https://orcid.org/0000-0003-4517-1316)

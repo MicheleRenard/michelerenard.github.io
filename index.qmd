@@ -1,0 +1,103 @@
+---
+pagetitle: "Michèle Renard — Heat, sleep and population health"
+description-meta: "Environmental physiologist and quantitative researcher at the National University of Singapore."
+toc: false
+---
+
+::: {.hero}
+::: {}
+![](images/profile.svg){fig-alt="Michèle Renard"}
+:::
+
+::: {}
+# Michèle Renard {.title}
+
+[Research Fellow · Yong Loo Lin School of Medicine, National University of Singapore]{.subtitle}
+
+::: {.lead-in}
+I am an environmental physiologist and quantitative researcher working on how
+heat shapes sleep, physiological strain and health in real-world populations.
+:::
+
+Most of my work sits where field measurement meets statistical modelling: large
+longitudinal wearable and sensor datasets, randomised cooling interventions in
+homes and dormitories, and systematic reviews that feed directly into national
+heat-health policy. I lead the statistical analysis for two national research
+programmes — **Project HEATS** and **Cooling Singapore 2.0** — and supervise
+three doctoral candidates and a postdoctoral researcher.
+
+[Working with me](collaborate.qmd){.btn-ember}
+[Publications](publications.qmd){.btn-outline-ink}
+[Curriculum vitae](cv.qmd){.btn-outline-ink}
+:::
+:::
+
+## What I work on
+
+::: {.grid-cards}
+::: {.card-item}
+#### Indoor heat and sleep
+How bedroom temperature and humidity shape sleep continuity in tropical
+homes and dormitories — 122 participants, 10,303 person-nights, three field
+waves.
+:::
+
+::: {.card-item .night}
+#### Heat vulnerability and advisories
+Evidence synthesis behind Singapore's Exertional Heat Vulnerability Index, and
+a review of how heat-health advisories are designed and whether they work.
+:::
+
+::: {.card-item}
+#### Physiological strain in the heat
+Laboratory responses to controlled heat exposure in children, unacclimatised
+adults and older adults, translated into population-tailored guidance.
+:::
+
+::: {.card-item .night}
+#### Behaviour, nutrition and health
+Earlier and continuing work on the determinants of dietary intake — in
+athletes, and in UK households through the cost-of-living crisis.
+:::
+:::
+
+## Currently
+
+- Leading the primary analysis of nighttime bedroom temperature and sleep
+  continuity in Singapore homes, and the HEATS exposure protocol
+  (*BMC Public Health*, under review).
+- Leading the evidence-synthesis workstream for the **eHVI** programme
+  (NRF/NEA award CISR-2024-2R-04) as protocol lead and review guarantor.
+- **Lead for Strategic Partnerships, Business Development & External Relations**,
+  NUS Medicine Early Career Researchers Office (2026–27).
+- Four PROSPERO-registered systematic reviews in progress across heat
+  advisories, vulnerability indices, nighttime heat thresholds and cooling.
+
+## Recent
+
+::: {.note-box}
+**Media, June 2026** — Project HEATS findings were covered in
+[*The Straits Times*](https://www.straitstimes.com/singapore/environment/whats-the-temperature-in-the-bedroom-in-spore-a-muggy-28-deg-c-says-new-study-on-residents)
+and [*Lianhe Zaobao*](https://www.zaobao.com.sg/news/singapore/story20260625-9260617)
+following the NRF CREATE Symposium, with the work cited by the Chairman of the
+National Research Foundation Singapore.
+:::
+
+- **Aug 2026** — Seven abstracts at the International Conference on Environmental
+  Ergonomics (ICEE), Kuching, including an oral presentation on near-body–room
+  air temperature difference and total sleep time.
+- **Aug 2026** — Invited presenter, *"Which Test, and Why?"*, CLIF Foundational
+  Workshop on Statistical Approaches, NUS.
+- **Jun 2026** — Three oral presentations at Indoor Air 2026, Singapore, plus a
+  featured Project HEATS interactive workshop.
+- **Mar 2026** — Named a **JSPS HOPE Fellow** at the 17th JSPS HOPE Meeting with
+  Nobel Laureates, Tsukuba, Japan.
+
+## Elsewhere
+
+[ORCID](https://orcid.org/0000-0003-4517-1316) ·
+[Google Scholar](https://scholar.google.com/citations?user=nyVJS9AAAAAJ) ·
+[ResearchGate](https://www.researchgate.net/profile/Michele-Renard) ·
+[LinkedIn](https://www.linkedin.com/in/michelerenard/) ·
+[GitHub](https://github.com/MicheleRenard) ·
+[mrenard@nus.edu.sg](mailto:mrenard@nus.edu.sg)

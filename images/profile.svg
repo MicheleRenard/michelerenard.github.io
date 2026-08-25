@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <rect width="400" height="500" fill="#F4F1EC"/>
+  <rect x="0.5" y="0.5" width="399" height="499" fill="none" stroke="#E4DED4" stroke-width="1"/>
+  <circle cx="200" cy="205" r="62" fill="none" stroke="#C9C1B4" stroke-width="2"/>
+  <path d="M112 330c0-48 39-78 88-78s88 30 88 78" fill="none" stroke="#C9C1B4" stroke-width="2"/>
+  <text x="200" y="396" text-anchor="middle" font-family="Inter, -apple-system, sans-serif"
+        font-size="15" fill="#6E7784" letter-spacing="0.5">Photo goes here</text>
+  <text x="200" y="420" text-anchor="middle" font-family="Inter, -apple-system, sans-serif"
+        font-size="12.5" fill="#98A0AB">replace images/profile.svg</text>
+</svg>

@@ -1,0 +1,128 @@
+---
+title: "Research"
+subtitle: "Heat, sleep and physiological strain in free-living populations"
+---
+
+My research asks a deceptively simple question: **how much heat is too much, and
+for whom?** Answering it means measuring people where they actually live and
+sleep, modelling exposure–response relationships that are rarely linear, and
+then turning those relationships into thresholds that a public health agency
+can act on.
+
+Three strands run through the work — field measurement, statistical modelling,
+and evidence synthesis — and most projects use all three.
+
+---
+
+## Project HEATS — Heat Exposure, Activity and Sleep {#heats}
+
+[Analytical lead · NRF CREATE programme · 2025–present]{.eyebrow}
+
+Project HEATS characterises the indoor thermal environment of Singapore homes
+and dormitories and links it to objectively measured sleep. I lead the
+statistical analysis and manuscript development for the heat exposure
+workstream.
+
+**Design.** Wearable and in-home monitoring across three field waves
+(Jun 2025 – Jul 2026): bedroom temperature, humidity, CO₂ and particulates
+alongside actigraphy-derived sleep outcomes. The primary analysis covers
+**122 participants and 10,303 person-nights**.
+
+**Methods.** Linear mixed-effects models with **Mundlak within/between
+decomposition**, which lets us separate what a person does in response to a hot
+night (behavioural adaptation) from what heat does to them (physiological
+strain) — a distinction that a single pooled coefficient hides. Non-linear
+threshold work uses piecewise and segmented models with AIC-based knot search
+and restricted cubic splines, comparing dry-bulb temperature against composite
+indices (wet-bulb temperature, Heat Index) as predictors of sleep disruption.
+
+**Outputs.** A protocol paper under review at *BMC Public Health*; the primary
+sleep-continuity analysis in preparation; three oral presentations at Indoor Air
+2026; a 30-night field trial of a dynamic "down-rise" bedroom cooling profile.
+
+::: {.note-box}
+Findings from this programme were covered nationally in *The Straits Times* and
+*Lianhe Zaobao* in June 2026, and cited by the Chairman of the National Research
+Foundation Singapore.
+:::
+
+---
+
+## Exertional Heat Vulnerability Index (eHVI) {#ehvi}
+
+[Evidence-synthesis lead · protocol lead and guarantor · NRF & NEA, CISR-2024-2R-04]{.eyebrow}
+
+A Climate Impact Science Research programme building a heat vulnerability index
+for Singapore. I lead the evidence-synthesis workstream: I developed the
+systematic review protocol underpinning the index — search strategy, extraction
+framework and synthesis approach — and serve as guarantor of the review. I also
+chair the bi-weekly technical review and act as quality gate for the report
+blocks delivered to the funder.
+
+Registered as PROSPERO **CRD420261289729**.
+
+---
+
+## Cooling Singapore 2.0 {#cs20}
+
+[Analytical lead, physiological workstream · NRF]{.eyebrow}
+
+Controlled laboratory heat-exposure studies across population groups who are
+usually treated as a single "general public" in advisory design: children,
+heat-unacclimatised adults and older adults. I model the physiological and
+perceptual responses and translate them into policy-relevant insight for
+tailoring national heat-health advisories — the point being that one threshold
+for everyone protects nobody particularly well.
+
+---
+
+## Evidence synthesis {#reviews}
+
+Four PROSPERO-registered reviews, two of which I lead and two of which I
+supervise. Together they map what is actually known about nighttime heat and
+about the tools used to warn people.
+
+| Registration | Review | My role |
+|---|---|---|
+| **CRD420261289729** | Heat vulnerability index development in urban settings | Lead author, protocol lead, guarantor |
+| **CRD420251052384** | Heat health advisory tools and their effectiveness (113 studies) | Lead author |
+| **CRD420251009764** | Adverse nighttime heat thresholds and effects on sleep, comfort and health (177 records) | Second author, supervisor |
+| **CRD420251134107** | Fluid temperature and form in cooling (60 studies, 644 participants) | Second author, supervisor |
+
+Methodologically this work follows PRISMA 2020 and PRISMA-P, with MMAT and
+Cochrane Risk of Bias 2.0 appraisal, multilevel sensitivity models, publication
+bias assessment and certainty-of-evidence grading.
+
+---
+
+## Behaviour, nutrition and health {#nutrition}
+
+My doctoral and postdoctoral work addressed a parallel question in a different
+domain: what determines what people actually eat, and which of those
+determinants can be moved?
+
+- **Team sport athletes** (PhD, TUS Athlone) — dietary intake against sports
+  nutrition guidelines, nutrition knowledge, and cooking and food skills, using
+  a mixed-methods design to identify modifiable behavioural targets.
+- **UK households in the cost-of-living crisis** (King's College London) —
+  cooking and food behaviours, food insecurity, diet quality and mental
+  wellbeing, combining hierarchical regression on large survey datasets with
+  thematic analysis of focus group and open-text data.
+
+The methodological thread — behaviour is a modifiable exposure, and you have to
+measure it well before you can change it — is the same one that runs through the
+heat work.
+
+---
+
+## Applied and advisory work {#advisory}
+
+**External reviewer, Sport Singapore** — SEA Games 2025 heat resilience pilot.
+With A/Prof Jason Kai Wei Lee and Dr Pearl Tan, I serve on the NUS external
+review panel for an athlete questionnaire (*n* = 68) and in-competition core
+temperature profiling across five sports, with ongoing input to the national
+heat resilience roadmap.
+
+**Peer review** — *Sports Medicine – Open*; *Environmental Science and Pollution
+Research International*; *Journal of Science in Sport and Exercise*; *Journal of
+the International Society of Sports Nutrition*.

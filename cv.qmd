@@ -1,0 +1,68 @@
+---
+title: "Curriculum vitae"
+subtitle: "Updated August 2026"
+---
+
+Two versions, depending on what you need.
+
+[Full academic CV](cv/master-cv.html){.btn-ember}
+[Short CV](cv/short-cv.html){.btn-outline-ink}
+
+The **full academic CV** is the comprehensive record — every publication with
+DOIs, the complete conference and teaching history, funding, supervision and
+service. The **short CV** is a three-page methods-and-impact version with five
+selected publications, for introductions and industry contexts.
+
+---
+
+## In brief
+
+**Now** — Research Fellow, Yong Loo Lin School of Medicine, National University
+of Singapore (Human Potential Translational Research Programme & Heat Resilience
+and Performance Centre), since April 2025. Analytical lead across Project HEATS
+and Cooling Singapore 2.0.
+
+**Before** — Postdoctoral Research Associate, Department of Nutritional Sciences,
+King's College London (2024–25). Assistant Lecturer in Exercise Physiology and
+in Sport & Exercise Nutrition, Atlantic Technological University, Sligo
+(2021–22). Health Advisor, Bupa UK (2018–19).
+
+## Education
+
+| | |
+|---|---|
+| **PhD**, Sport, Health and Exercise Sciences | Technological University of the Shannon, Ireland, 2024 |
+| **MSc**, Applied Sports Nutrition | St Mary's University Twickenham, UK, 2019 |
+| **BSc (Hons)**, Exercise, Nutrition and Health | Kingston University, UK, 2017 |
+
+Doctoral thesis: *Determinants of Dietary Intake in Team Sport Athletes.*
+
+## Honours
+
+**JSPS HOPE Fellow** — Japan Society for the Promotion of Science, March 2026.
+Awarded on completion of the 17th JSPS HOPE Meeting with Nobel Laureates,
+Tsukuba, representing NUS Medicine.
+
+**Winner, Postgraduate Competition** — The Nutrition Society (UK & Ireland),
+July 2024, with an invited lecture at the International Congress in Belfast.
+
+## Funding
+
+**Climate Impact Science Research Programme**, NRF Singapore & National
+Environment Agency (CISR-2024-2R-04) — Exertional Heat Vulnerability Index for
+Singapore. Research team member leading the evidence-synthesis workstream;
+protocol lead and review guarantor.
+
+**NRF CREATE** — Project HEATS. Named contributor delivering the statistical
+analysis plan and leading manuscript development for the heat exposure
+workstream.
+
+## Service
+
+Lead for Strategic Partnerships, Business Development & External Relations, NUS
+Medicine Early Career Researchers Office (2026–27) · Education Subcommittee
+Lead, NUS Medicine Postdoctoral Association (since 2025) · External reviewer,
+Sport Singapore SEA Games 2025 heat resilience report · Invited journal
+reviewer for *Sports Medicine – Open*, *Environmental Science and Pollution
+Research International*, *Journal of Science in Sport and Exercise*, and
+*Journal of the International Society of Sports Nutrition*.
