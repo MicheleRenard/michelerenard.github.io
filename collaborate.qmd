@@ -1,6 +1,6 @@
 ---
 title: "Working with me"
-subtitle: "Collaboration, supervision, partnerships and media"
+subtitle: "Collaboration, mentorship, partnerships and media"
 ---
 
 The quickest way to reach me is [mrenard@nus.edu.sg](mailto:mrenard@nus.edu.sg).
@@ -29,20 +29,21 @@ I work across environmental physiology, sleep, public health and nutritional
 science, and I am comfortable being the quantitative member of a team whose
 subject expertise is elsewhere.
 
-## Prospective students and early career researchers
+## Early career researchers
 
-I currently supervise three doctoral candidates and one postdoctoral researcher
-at NUS, working on dormitory heat and sleep, nighttime heat thresholds, cooling
-interventions, and heat vulnerability index development.
+Much of my week is spent supporting teams of early career researchers — on
+analysis planning, coding practice, interpretation and scientific writing —
+across projects on dormitory heat and sleep, nighttime heat thresholds, cooling
+interventions and heat vulnerability index development.
 
-If you are considering postgraduate work in heat, sleep or environmental
-physiology, I am happy to talk — including about whether the project you have in
-mind is the right one. When you write, it helps enormously if you include what
-question interests you and why, rather than a general expression of interest.
+If you are working in heat, sleep or environmental physiology and are stuck on a
+methods or analysis question, I am happy to talk. When you write, it helps
+enormously if you include the question that interests you and why, rather than a
+general expression of interest.
 
-I also mentor early career researchers through the **NUS Medicine Postdoctoral
-Association**, where I lead the Education Subcommittee, and through the **Early
-Career Researchers Office**.
+I also support early career researchers more broadly through the **NUS Medicine
+Postdoctoral Association**, where I lead the Education Subcommittee, and through
+the **Early Career Researchers Office**.
 
 ## Industry and institutional partnerships
 
@@ -57,10 +58,9 @@ would involve early career researchers, this is a conversation I can start.
 
 ## Advisory and review work
 
-I serve as an external reviewer for **Sport Singapore's** SEA Games heat
-resilience programme, and I review for journals across sports medicine and
-environmental health. I am open to advisory work on heat-health guidance,
-protocol review and analysis planning where I can add something specific.
+I review for journals across sports medicine and environmental health, and I am
+open to advisory work on heat-health guidance, protocol review and analysis
+planning where I can add something specific.
 
 ## Media and speaking
 

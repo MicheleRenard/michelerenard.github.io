@@ -9,7 +9,7 @@ Two versions, depending on what you need.
 [Short CV](cv/short-cv.html){.btn-outline-ink}
 
 The **full academic CV** is the comprehensive record — every publication with
-DOIs, the complete conference and teaching history, funding, supervision and
+DOIs, the complete conference and teaching history, funding, teaching and
 service. The **short CV** is a three-page methods-and-impact version with five
 selected publications, for introductions and industry contexts.
 
@@ -61,8 +61,7 @@ workstream.
 
 Lead for Strategic Partnerships, Business Development & External Relations, NUS
 Medicine Early Career Researchers Office (2026–27) · Education Subcommittee
-Lead, NUS Medicine Postdoctoral Association (since 2025) · External reviewer,
-Sport Singapore SEA Games 2025 heat resilience report · Invited journal
+Lead, NUS Medicine Postdoctoral Association (since 2025) · Invited journal
 reviewer for *Sports Medicine – Open*, *Environmental Science and Pollution
 Research International*, *Journal of Science in Sport and Exercise*, and
 *Journal of the International Society of Sports Nutrition*.

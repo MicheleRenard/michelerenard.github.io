@@ -79,15 +79,15 @@ for everyone protects nobody particularly well.
 ## Evidence synthesis {#reviews}
 
 Four PROSPERO-registered reviews, two of which I lead and two of which I
-supervise. Together they map what is actually known about nighttime heat and
-about the tools used to warn people.
+support methodologically. Together they map what is actually known about
+nighttime heat and about the tools used to warn people.
 
 | Registration | Review | My role |
 |---|---|---|
 | **CRD420261289729** | Heat vulnerability index development in urban settings | Lead author, protocol lead, guarantor |
 | **CRD420251052384** | Heat health advisory tools and their effectiveness (113 studies) | Lead author |
-| **CRD420251009764** | Adverse nighttime heat thresholds and effects on sleep, comfort and health (177 records) | Second author, supervisor |
-| **CRD420251134107** | Fluid temperature and form in cooling (60 studies, 644 participants) | Second author, supervisor |
+| **CRD420251009764** | Adverse nighttime heat thresholds and effects on sleep, comfort and health (177 records) | Second author, methodological support |
+| **CRD420251134107** | Fluid temperature and form in cooling (60 studies, 644 participants) | Second author, methodological support |
 
 Methodologically this work follows PRISMA 2020 and PRISMA-P, with MMAT and
 Cochrane Risk of Bias 2.0 appraisal, multilevel sensitivity models, publication
@@ -115,14 +115,8 @@ heat work.
 
 ---
 
-## Applied and advisory work {#advisory}
+## Peer review {#peer-review}
 
-**External reviewer, Sport Singapore** — SEA Games 2025 heat resilience pilot.
-With A/Prof Jason Kai Wei Lee and Dr Pearl Tan, I serve on the NUS external
-review panel for an athlete questionnaire (*n* = 68) and in-competition core
-temperature profiling across five sports, with ongoing input to the national
-heat resilience roadmap.
-
-**Peer review** — *Sports Medicine – Open*; *Environmental Science and Pollution
-Research International*; *Journal of Science in Sport and Exercise*; *Journal of
-the International Society of Sports Nutrition*.
+I review for *Sports Medicine – Open*, *Environmental Science and Pollution
+Research International*, the *Journal of Science in Sport and Exercise*, and the
+*Journal of the International Society of Sports Nutrition*.

@@ -19,7 +19,7 @@ Website/
 ├── collaborate.qmd  "working with me"
 ├── cv.qmd           CV landing page + summary
 ├── cv/              built CV HTML, copied from ../CV/build/
-├── images/          profile photo, favicon
+├── images/          profile photo (profile.jpg), favicon
 └── _site/           GENERATED. Never edit; gitignored.
 ```
 
@@ -106,5 +106,8 @@ Unlike the CV repo, **this repo is public**. Two rules follow:
   address, no residency status — all of which appear in the CV Markdown and must
   not be copied across.
 - The built CV HTML in `cv/` is derived from the master CV. Check each rebuild
-  for the same details before committing. Consider maintaining a public variant
-  of the CV with the contact block trimmed.
+  for the same details before committing. The site pages and the CV do not say the
+  same things — the site describes support for early career researchers rather
+  than direct supervision, and omits the Sport Singapore review — so a public
+  variant of the CV, with the contact block and those items trimmed, is worth
+  maintaining. See OPEN-ITEMS.md.

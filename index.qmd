@@ -6,7 +6,7 @@ toc: false
 
 ::: {.hero}
 ::: {}
-![](images/profile.svg){fig-alt="Michèle Renard"}
+![](images/profile.jpg){fig-alt="Michèle Renard"}
 :::
 
 ::: {}
@@ -23,8 +23,8 @@ Most of my work sits where field measurement meets statistical modelling: large
 longitudinal wearable and sensor datasets, randomised cooling interventions in
 homes and dormitories, and systematic reviews that feed directly into national
 heat-health policy. I lead the statistical analysis for two national research
-programmes — **Project HEATS** and **Cooling Singapore 2.0** — and supervise
-three doctoral candidates and a postdoctoral researcher.
+programmes — **Project HEATS** and **Cooling Singapore 2.0** — and work
+alongside teams of early career researchers across both.
 
 [Working with me](collaborate.qmd){.btn-ember}
 [Publications](publications.qmd){.btn-outline-ink}

@@ -5,9 +5,9 @@ renders without them, but should not be published until they are resolved.
 
 ## Needs content
 
-- [ ] **Profile photo.** `images/profile.svg` is a placeholder. Replace with a
-      real photo (portrait crop, roughly 4:5, at least 800px wide) and update the
-      image path in `index.qmd`.
+- [x] **Profile photo.** `images/profile.jpg`, from `~/Downloads/MRENARD Profile
+      Picture.jpeg`, resized to 800px wide. Swap the file if you want a different
+      shot; no other change needed.
 - [ ] **Favicon.** `images/favicon.png` is a generated placeholder mark. Replace
       or remove.
 
@@ -27,9 +27,13 @@ renders without them, but should not be published until they are resolved.
       is already in press releases and public abstracts — but confirm that the
       "122 participants / 10,303 person-nights" framing is fine to state publicly
       before the primary analysis is published.
-- [ ] **Supervisees named on the site.** `research.qmd` does not name them;
-      `collaborate.qmd` refers to them only by topic. If you want them named and
-      linked, ask each of them first.
+- [ ] **The linked CV files still say more than the site does.** The site no
+      longer claims direct supervision and no longer mentions the Sport Singapore
+      SEA Games review — but `cv/master-cv.html` and `cv/short-cv.html`, which the
+      CV page links publicly, still carry both, along with named supervisees. Those
+      files are built from `../CV/current/`, which is yours to decide about. Either
+      trim a public variant of the CV or drop the direct links and offer the CV on
+      request.
 
 ## Decisions
 
