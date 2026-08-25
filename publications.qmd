@@ -24,6 +24,9 @@ BibTeX for everything here is [available as a file](references.bib).
 ## In preparation
 
 - **Renard, M.**, et al. Nighttime bedroom temperature and sleep continuity in Singapore homes — primary analysis of 122 participants across 10,303 person-nights.
+<!-- Chua, T. here is a DIFFERENT person from the Chua, Y. X. on the HEATS
+     protocol and the Indoor Air / ICEE entries. Both are correct as written;
+     do not normalise them to match. -->
 - **Renard, M.**, Chua, T., Tan, P. M. S., Ioannou, L., Kingma, B., Morabito, M., Gao, C., & Lee, J. K. W. A systematic review of heat health advisory tools and their effectiveness (113 studies). PROSPERO CRD420251052384.
 - **Renard, M.**, Angkanasirikul, W., Tan, P. M. S., Law, L. Y. L., & Lee, J. K. W. A systematic review to inform heat vulnerability index development in urban settings. PROSPERO CRD420261289729.
 - Kyaw, G. M. M., **Renard, M.**, Fan, X., & Lee, J. K. W. A systematic review of adverse nighttime heat thresholds and associated effects on sleep, comfort and health. PROSPERO CRD420251009764.
