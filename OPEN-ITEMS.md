@@ -4,21 +4,14 @@
 Everything below is still outstanding and now applies to a public page, so these
 are live-site edits rather than pre-launch checks.
 
-## Do these first — they are public now
-
-- [ ] **`collaborate.qmd` is my words, not yours** — see below. It is the page a
-      prospective collaborator or partner reads, and it is currently a draft
-      written from your CV.
-- [ ] **NUS Medicine communications check** — see below. Worth doing now rather
-      than later.
-
 ## Needs content
 
 - [x] **Profile photo.** `images/profile.jpg`, from `~/Downloads/MRENARD Profile
       Picture.jpeg`, resized to 800px wide. Swap the file if you want a different
       shot; no other change needed.
-- [ ] **Favicon.** `images/favicon.png` is a generated placeholder mark. Replace
-      or remove.
+- [ ] **Favicon.** `images/favicon.png` is a placeholder mark I generated — an
+      ember circle over a night bar. Fine to leave; replace if you want something
+      of your own. Regenerate nothing: it is a plain PNG.
 
 - [ ] **The plain-language explainer and media kit are on hold** until the
       underlying work is finalised. The page was written and then removed at
@@ -33,20 +26,17 @@ are live-site edits rather than pre-launch checks.
 
 ## Needs confirmation
 
-- [ ] **Every claim on `collaborate.qmd` is a draft written from the CV, not from
-      you.** In particular: what you actually want to receive email about, whether
-      you are open to prospective students right now, and the "what I will not be
-      much use for" box. Rewrite in your own words before publishing.
+- [x] **`collaborate.qmd` reviewed and approved as written** (25 Aug 2026). The
+      draft stands; no rewrite needed.
 - [ ] **The ECRO partnership paragraph.** The site describes the portfolio in
       general terms and does not name the industry partner. Confirm that even this
       framing is appropriate to publish while the pilot is being finalised.
-- [ ] **NUS Medicine communications policy.** Check whether there is guidance on
-      staff personal sites, use of the NUS name, or describing NRF-funded work.
-      Worth doing as an ECRO Lead specifically.
-- [ ] **Unpublished figures.** No unpublished results are on the site beyond what
-      is already in press releases and public abstracts — but confirm that the
-      "122 participants / 10,303 person-nights" framing is fine to state publicly
-      before the primary analysis is published.
+- [x] **NUS Medicine communications** — checked 25 Aug 2026. No issue with
+      holding a personal site from the School's perspective.
+- [ ] **The "122 participants / 10,303 person-nights" framing is now live** on the
+      home page and research page. It was already public via the June 2026 press
+      coverage and conference abstracts, so this is not a new disclosure — but it
+      is worth a second look now that it sits on a page under your own name.
 - [ ] **The public CV PDFs still say more than the site does.** The site no
       longer claims direct supervision and no longer mentions the Sport Singapore
       SEA Games review — but `cv/master-cv.html` and `cv/short-cv.html`, which the
@@ -57,19 +47,19 @@ are live-site edits rather than pre-launch checks.
 
 ## Decisions
 
-- [ ] **Repository name.** `michelerenard.github.io` gives the clean root URL and
-      is the assumption throughout. The alternative is a project repo (e.g.
-      `website`) served at `michelerenard.github.io/website/`, which is worse.
+- [x] **Repository name** — `michelerenard.github.io`, giving the clean root URL.
+      Decided and created 25 Aug 2026.
 - [ ] **Custom domain?** Optional, ~S$20/year, can be added at any time without
       changing anything else.
 - [ ] **Blog / notes section?** Deliberately omitted. Easy to add later
       (`quarto` has a listing page type), but an empty or stale blog is worse than
       no blog. Add it only if you actually want to write.
-- [ ] **Dark mode?** Quarto supports a light/dark toggle. Omitted to keep the
-      prototype focused; roughly half a day to do properly.
-- [ ] **Public CV variant.** The CV pages currently link the same HTML as the
-      private build, contact block included. Decide whether to trim it (see
-      *Privacy* in README.md).
+- [x] **Dark mode** — built 25 Aug 2026. `theme-light.scss` and `theme-dark.scss`
+      define the same variables; `theme-rules.scss` is shared.
+- [x] **Public CV variant** — `tools/build-cv-pdf.py` now generates redacted PDF
+      *and* HTML from the private Markdown, with a check that fails the build if
+      anything redacted survives. The one remaining decision is the supervision
+      language, above.
 
 ## Known gaps
 
