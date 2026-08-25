@@ -33,17 +33,14 @@ Website/
 
 ## Build and preview
 
-Quarto is installed at `~/.local/quarto` with a symlink at `~/.local/bin/quarto`
-(the Homebrew cask needs `sudo`, which an automated install cannot supply — to
-switch to a system install later, run `brew install --cask quarto` yourself and
-delete `~/.local/quarto`).
-
 ```bash
-export PATH="$HOME/.local/bin:$PATH"
-
 quarto preview     # live-reloading local preview, rebuilds as you edit
 quarto render      # one-off build into _site/
 ```
+
+Install Quarto with `brew install --cask quarto`. The scripts in `tools/` locate
+it on `PATH` and fall back to `~/.local/bin/quarto`, so either a system install
+or a user-local one works.
 
 ## Deploying to GitHub Pages
 

@@ -24,7 +24,26 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CV_SRC = Path.home() / "Documents" / "CV" / "current"
 OUT = ROOT / "cv"
-QUARTO = Path.home() / ".local" / "bin" / "quarto"
+
+
+def find_quarto():
+    """Prefer a system Quarto (Homebrew, /usr/local/bin) and fall back to the
+    user-local copy under ~/.local. Either works; this just means the script
+    keeps running whichever way Quarto is installed."""
+    found = shutil.which("quarto")
+    if found:
+        return found
+    for candidate in (
+        Path("/usr/local/bin/quarto"),
+        Path("/opt/homebrew/bin/quarto"),
+        Path.home() / ".local" / "bin" / "quarto",
+    ):
+        if candidate.exists():
+            return str(candidate)
+    sys.exit("Quarto not found. Install it with: brew install --cask quarto")
+
+
+QUARTO = find_quarto()
 
 # (pattern, replacement, reason). Patterns are regexes applied to the raw
 # Markdown with re.MULTILINE | re.DOTALL.
@@ -93,7 +112,7 @@ def build(name):
 
         for fmt, ext in (("typst", "pdf"), ("html", "html")):
             r = subprocess.run(
-                [str(QUARTO), "render", str(qmd), "--to", fmt],
+                [QUARTO, "render", str(qmd), "--to", fmt],
                 capture_output=True, text=True,
             )
             if r.returncode != 0:
