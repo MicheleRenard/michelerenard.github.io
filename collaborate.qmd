@@ -69,10 +69,6 @@ My work on indoor heat and sleep has been covered in *The Straits Times* and
 in tropical climates, and to give talks or workshops — particularly on
 statistical methods for researchers who did not train as statisticians.
 
-If you are writing about the work, the [heat and sleep explainer](heat-and-sleep.qmd)
-has the findings in plain language plus a media kit — headshot, bios, and what I
-can and cannot usefully comment on.
-
 ::: {.note-box}
 **A note on what I will not be much use for.** I am not a clinician and cannot
 advise on individual health. I do not take on analysis-only work with no

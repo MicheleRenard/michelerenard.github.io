@@ -11,16 +11,16 @@ renders without them, but should not be published until they are resolved.
 - [ ] **Favicon.** `images/favicon.png` is a generated placeholder mark. Replace
       or remove.
 
-- [ ] **Every number on `heat-and-sleep.qmd` needs your sign-off.** I wrote that
-      page from what is already public — the 28°C figure from *The Straits Times*,
-      the ~10 minutes per 1°C from *Lianhe Zaobao*, and the 122 participants /
-      10,303 person-nights already on the site. The interpretation, the
-      "what this does not show" section and the threshold discussion are my
-      wording from your CV and research description, not quotes from you. Read it
-      as if a journalist were about to quote every sentence, because that is its
-      purpose.
-- [ ] **The media kit bio is written without pronouns**, because I do not know
-      which you use. Set them, or leave it as is — it reads fine either way.
+- [ ] **The plain-language explainer and media kit are on hold** until the
+      underlying work is finalised. The page was written and then removed at
+      commit `f0d2f5a`; recover it with
+      `git show 474bf7a:heat-and-sleep.qmd > heat-and-sleep.qmd`, then restore the
+      navbar entry in `_quarto.yml` and the two links (in `index.qmd` and
+      `collaborate.qmd`). Before it goes back, every number on it needs checking
+      against what is published by then, and the interpretation needs rewriting in
+      your words. Note the media kit — headshot, bios, topics — went with it, and
+      does not depend on the findings; say the word and I will bring back just
+      that part.
 
 ## Needs confirmation
 

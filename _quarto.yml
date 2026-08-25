@@ -23,10 +23,8 @@ website:
         text: Research
       - href: publications.qmd
         text: Publications
-      - href: heat-and-sleep.qmd
-        text: Heat & sleep
       - href: tools.qmd
-        text: Tools
+        text: Tools & Resources
       - href: collaborate.qmd
         text: Working with me
       - href: cv.qmd
