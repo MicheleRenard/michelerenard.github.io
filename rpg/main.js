@@ -15,6 +15,28 @@ const TILE = 16;
 const MAP_W = 25;
 const MAP_H = 18;
 
+// Integer pixel scaling: size the canvas box to a whole multiple of the game
+// resolution so pixels stay square (non-integer scaling reads as stretched).
+// Registered before KAPLAY's own resize listener so it sees the new box size.
+(() => {
+  const box = document.getElementById("game-box");
+  const stage = document.getElementById("stage");
+  const fit = () => {
+    const availW = stage.clientWidth || window.innerWidth;
+    const availH = (stage.clientHeight || window.innerHeight - 60) - 8;
+    const s = Math.floor(Math.min(availW / (MAP_W * TILE), availH / (MAP_H * TILE)));
+    if (s >= 1) {
+      box.style.width = MAP_W * TILE * s + "px";
+      box.style.height = MAP_H * TILE * s + "px";
+    } else {
+      box.style.width = "100%";   // tiny screens: fall back to fractional fit
+      box.style.height = "";
+    }
+  };
+  window.addEventListener("resize", fit);
+  fit();
+})();
+
 const k = kaplay({
   canvas: document.getElementById("game"),
   width: MAP_W * TILE,
@@ -109,11 +131,11 @@ const groundTiles = {
 // Only the lower `solid` px block, the walls, collides — the player can walk
 // behind a tall roof and be drawn behind it (y-sorted).
 const BUILDINGS = [
-  { spr: "lab", x: 56, y: 8, w: 64, h: 72, solid: 44 },
-  { spr: "library", x: 216, y: 16, w: 48, h: 64, solid: 44 },
-  { spr: "guild", x: 312, y: 16, w: 48, h: 64, solid: 44 },
-  { spr: "inn", x: 24, y: 100, w: 56, h: 76, solid: 50 },
-  { spr: "shop", x: 312, y: 112, w: 48, h: 64, solid: 44 },
+  { spr: "lab", x: 52, y: 12, w: 72, h: 68, solid: 42 },
+  { spr: "library", x: 212, y: 22, w: 56, h: 58, solid: 36 },
+  { spr: "guild", x: 308, y: 22, w: 56, h: 58, solid: 36 },
+  { spr: "inn", x: 20, y: 104, w: 64, h: 72, solid: 48 },
+  { spr: "shop", x: 308, y: 118, w: 56, h: 58, solid: 36 },
   { spr: "fountain", x: 184, y: 104, w: 32, h: 32, solid: 24 },
 ];
 
@@ -591,6 +613,8 @@ k.scene("village", () => {
   let moving = false;
   let target = null;          // tap-to-move destination (vec2)
   let stuckTime = 0;
+  let yFirst = false;         // leading axis for tap-walking
+  let swappedAxis = false;    // one axis swap allowed per target
   const virtualKeys = { up: false, down: false, left: false, right: false };
 
   const keyDown = (dir) => {
@@ -639,6 +663,9 @@ k.scene("village", () => {
       return;
     }
     target = m.clone();
+    yFirst = false;
+    swappedAxis = false;
+    stuckTime = 0;
   });
 
   document.querySelectorAll("#dpad button").forEach((btn) => {
@@ -670,12 +697,23 @@ k.scene("village", () => {
     if (v.x !== 0 || v.y !== 0) {
       target = null;
     } else if (target) {
-      // axis-by-axis toward the tap target, x first
+      // axis-by-axis toward the tap target; when a wall blocks the leading
+      // axis, swap to the other one before giving up (gets around signposts
+      // and building corners without real pathfinding)
       const dx = target.x - (player.pos.x + 8);
       const dy = target.y - (player.pos.y + 12);
-      if (Math.abs(dx) > 3) v.x = Math.sign(dx);
-      else if (Math.abs(dy) > 3) v.y = Math.sign(dy);
-      else target = null;
+      const axes = yFirst
+        ? [[Math.abs(dy) > 3 && Math.sign(dy), "y"], [Math.abs(dx) > 3 && Math.sign(dx), "x"]]
+        : [[Math.abs(dx) > 3 && Math.sign(dx), "x"], [Math.abs(dy) > 3 && Math.sign(dy), "y"]];
+      const [firstMove, firstAxis] = axes[0];
+      const [secondMove] = axes[1];
+      if (firstMove) {
+        if (firstAxis === "x") v.x = firstMove; else v.y = firstMove;
+      } else if (secondMove) {
+        if (firstAxis === "x") v.y = secondMove; else v.x = secondMove;
+      } else {
+        target = null;
+      }
     }
 
     if (v.x !== 0 || v.y !== 0) {
@@ -683,10 +721,17 @@ k.scene("village", () => {
       player.move(v.scale(SPEED));
       const dir = v.x < 0 ? "left" : v.x > 0 ? "right" : v.y < 0 ? "up" : "down";
       setAnim(dir, true);
-      // give up on unreachable tap targets
       if (target) {
         stuckTime = player.pos.sub(before).len() < 0.01 ? stuckTime + k.dt() : 0;
-        if (stuckTime > 0.5) { target = null; stuckTime = 0; }
+        if (stuckTime > 0.25) {
+          stuckTime = 0;
+          if (!swappedAxis) {
+            yFirst = !yFirst;      // blocked: try approaching on the other axis
+            swappedAxis = true;
+          } else {
+            target = null;         // blocked both ways: give up
+          }
+        }
       }
     } else if (moving) {
       setAnim(facing, false);

@@ -750,15 +750,19 @@ def hanging_sign(d, icon, x, y):
 
 
 def roof_trapezoid(d, w, roof_h, cols):
+    """Steep FF gable: the ridge is ~40% of the width, edges trimmed light."""
     rc, rl, rd = cols
-    slope = max(1, (w // 2 - 4)) / max(1, roof_h)
+    half_span = w * 0.30                      # total inset per side at the ridge
     for y in range(roof_h):
-        inset = int((roof_h - 1 - y) * slope * 0.55)
+        inset = int((roof_h - 1 - y) * half_span / max(1, roof_h - 1))
         d.rectangle([inset, y, w - 1 - inset, y], fill=rc)
         if 1 <= y < roof_h - 3 and y % 3 == 1:
             d.line([(inset + 1, y), (w - 2 - inset, y)], fill=rl)
-    top_inset = int((roof_h - 1) * slope * 0.55)
-    d.rectangle([top_inset, 0, w - 1 - top_inset, 0], fill=rd)   # ridge
+        if 0 < y < roof_h - 2:                # slanted edge trim
+            d.point((inset, y), rl)
+            d.point((w - 1 - inset, y), rd)
+    top_inset = int(half_span)
+    d.rectangle([top_inset, 0, w - 1 - top_inset, 0], fill=rd)   # ridge cap
     d.rectangle([0, roof_h - 3, w - 1, roof_h - 2], fill=rd)     # eave shadow
     d.rectangle([0, roof_h - 1, w - 1, roof_h - 1], fill=INK)    # eave line
 
@@ -785,6 +789,9 @@ def arched_door(d, x, y_bottom, dw=10, dh=14):
 
 def house(w, h, roof_h, roof_cols, sign_icon=None, stories=1,
           awning=False, chimney=False, pennant=False):
+    """FF-style house. The sign, door and windows share the ground floor on a
+    fixed grid that never overlaps: [sign] [door] [window] on narrow walls,
+    [window] [sign] [door] [window] on wide (>=64) ones."""
     img = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
     roof_trapezoid(d, w, roof_h, roof_cols)
@@ -796,24 +803,27 @@ def house(w, h, roof_h, roof_cols, sign_icon=None, stories=1,
     d.rectangle([w - 4, roof_h, w - 3, h - 1], fill=TIMBER)
     d.rectangle([2, h - 2, w - 3, h - 1], fill=TIMBER)
     d.rectangle([2, h - 1, w - 3, h - 1], fill=TIMBER_D)
-    wall_top = roof_h
     if stories == 2:
         mid = roof_h + (h - roof_h) // 2 - 2
         d.rectangle([2, mid, w - 3, mid + 1], fill=TIMBER)       # storey beam
-        for wx in (7, w - 14):                                   # upper windows
-            window(d, wx, roof_h + 4)
-        wall_top = mid + 2
-    # door, centred on the sprite
+        window(d, 8, roof_h + 4)                                 # upper windows
+        window(d, w - 15, roof_h + 4)
+    # ground floor layout — door centred on the sprite
     dw = 10
     dx = (w - dw) // 2
     arched_door(d, dx, h - 3)
-    # ground-floor windows flanking the door
     wy = h - 15
-    if w >= 44:
+    sign_x = dx - 14
+    if sign_icon is not None and sign_x >= 19:
+        # wide wall: window, then sign, then door — all clear of each other
         window(d, 6, wy)
-        window(d, w - 13, wy)
+    elif sign_icon is not None:
+        sign_x = 6                                               # sign replaces the left window
+    else:
+        window(d, 6, wy)
+    window(d, w - 13, wy)                                        # right window always fits
     if sign_icon is not None:
-        hanging_sign(d, sign_icon, dx - 12, h - 18)
+        hanging_sign(d, sign_icon, sign_x, h - 18)
     if awning:
         ax0, ax1 = dx - 5, dx + dw + 4
         ay = h - 19
@@ -825,11 +835,10 @@ def house(w, h, roof_h, roof_cols, sign_icon=None, stories=1,
         d.rectangle([ax0, ay, ax1, ay], fill=INK)
         d.rectangle([ax0, ay - 1, ax1, ay - 1], fill=TIMBER_D)
     if chimney:
-        d.rectangle([w - 14, 2, w - 9, roof_h - 2], fill=PLASTER_D)
-        d.rectangle([w - 15, 2, w - 8, 4], fill=INK)
-        d.point((w - 12, 0), (210, 210, 210))                    # smoke
+        d.rectangle([w - 16, 3, w - 11, roof_h - 2], fill=PLASTER_D)
+        d.rectangle([w - 17, 3, w - 10, 5], fill=INK)
+        d.point((w - 14, 1), (210, 210, 210))                    # smoke
     if pennant:
-        top_inset = int((roof_h - 1) * (max(1, (w // 2 - 4)) / max(1, roof_h)) * 0.55)
         px = w // 2
         d.rectangle([px, 0, px, 6], fill=TIMBER_D)
         d.polygon([(px + 1, 0), (px + 7, 2), (px + 1, 4)], fill=EMBER)
@@ -855,20 +864,21 @@ def b_fountain():
     return outline(img)
 
 
-# (name, width, height, roof_h, roof colours, extras) — bottoms are fixed by
-# main.js: top row buildings end at y=80, the inn and shop at y=176.
+# Squarer proportions than the first pass — main.js aligns each sprite's
+# bottom to the paths and keeps the door centres on the interact zones.
 def build_buildings():
-    save(house(64, 72, 24, (ROOF_EMBER, ROOF_EMBER_L, ROOF_EMBER_D),
+    save(house(72, 68, 26, (ROOF_EMBER, ROOF_EMBER_L, ROOF_EMBER_D),
                sign_icon=ICON_FLASK, chimney=True), OUT_TILES / "lab.png")
-    save(house(48, 64, 20, (ROOF_BLUE, ROOF_BLUE_L, ROOF_BLUE_D),
+    save(house(56, 58, 22, (ROOF_BLUE, ROOF_BLUE_L, ROOF_BLUE_D),
                sign_icon=ICON_BOOK), OUT_TILES / "library.png")
-    save(house(48, 64, 20, (ROOF_PLUM, ROOF_PLUM_L, ROOF_PLUM_D),
+    save(house(56, 58, 22, (ROOF_PLUM, ROOF_PLUM_L, ROOF_PLUM_D),
                sign_icon=ICON_SHIELD, pennant=True), OUT_TILES / "guild.png")
-    save(house(56, 76, 22, (ROOF_NIGHT, ROOF_NIGHT_L, ROOF_NIGHT_D),
+    save(house(64, 72, 24, (ROOF_NIGHT, ROOF_NIGHT_L, ROOF_NIGHT_D),
                sign_icon=ICON_BED, stories=2), OUT_TILES / "inn.png")
-    save(house(48, 64, 20, (ROOF_EMBER, ROOF_EMBER_L, ROOF_EMBER_D),
+    save(house(56, 58, 22, (ROOF_EMBER, ROOF_EMBER_L, ROOF_EMBER_D),
                sign_icon=ICON_POTION, awning=True), OUT_TILES / "shop.png")
     save(b_fountain(), OUT_TILES / "fountain.png")
+
 
 
 if __name__ == "__main__":
