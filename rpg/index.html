@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Renard Village — Michèle Renard, the RPG</title>
+<meta name="description" content="A 16-bit RPG version of Michèle Renard's research portfolio. Walk around Renard Village to explore her work on heat, sleep and population health.">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="../images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="../">Skip the game — browse this as a normal website ▸</a>
+
+<main id="stage" aria-label="Renard Village — a small 2D role-playing game about Michèle Renard's research">
+  <canvas id="game"></canvas>
+
+  <!-- FF-style windows live in the DOM so text is selectable, links clickable,
+       and screen readers can follow along. -->
+  <div id="ui" hidden>
+    <section id="dialogue" class="ff-window ff-dialogue" role="dialog" aria-modal="true" aria-labelledby="dialogue-title" hidden>
+      <h2 id="dialogue-title" class="ff-tab"></h2>
+      <div id="dialogue-text" aria-live="polite"></div>
+      <div id="dialogue-advance" class="ff-advance" aria-hidden="true">▼</div>
+    </section>
+
+    <section id="menu" class="ff-window ff-menu" role="dialog" aria-modal="true" aria-labelledby="menu-title" hidden>
+      <h2 id="menu-title" class="ff-tab"></h2>
+      <ul id="menu-list" role="menu"></ul>
+      <p class="ff-hint">↑↓ select · Enter confirm · Esc close</p>
+    </section>
+
+    <section id="status" class="ff-window ff-status" role="dialog" aria-modal="true" aria-labelledby="status-title" hidden>
+      <h2 id="status-title" class="ff-tab">Status</h2>
+      <div id="status-body"></div>
+      <p class="ff-hint">Esc close</p>
+    </section>
+  </div>
+
+  <!-- Mobile controls (shown on coarse pointers) -->
+  <div id="touch-controls" aria-hidden="true" hidden>
+    <div id="dpad">
+      <button data-dir="up" aria-label="Walk up">▲</button>
+      <button data-dir="left" aria-label="Walk left">◀</button>
+      <button data-dir="right" aria-label="Walk right">▶</button>
+      <button data-dir="down" aria-label="Walk down">▼</button>
+    </div>
+    <button id="btn-a" aria-label="Interact">A</button>
+  </div>
+
+  <div id="hud">
+    <button id="audio-toggle" aria-pressed="false" title="Music (off)">♪ off</button>
+    <button id="status-button" title="Status screen (M)">Status</button>
+  </div>
+</main>
+
+<noscript>
+  <p class="noscript-note">
+    Renard Village is a small browser game that needs JavaScript. The same
+    content — research, publications, CV — lives on the
+    <a href="../">regular website</a>.
+  </p>
+</noscript>
+
+<footer id="credits">
+  <details>
+    <summary>Credits &amp; colophon</summary>
+    <ul>
+      <li>An affectionate homage to 16-bit RPGs. No Square Enix assets are used; all pixel art is original or CC0.</li>
+      <li>Engine: <a href="https://kaplayjs.com">KAPLAY</a> v3001.0.19 (MIT), vendored.</li>
+      <li>Font: <a href="https://fonts.google.com/specimen/Press+Start+2P">Press Start 2P</a> (OFL).</li>
+      <li>All pixel art is original, drawn programmatically by <code>tools/build-rpg-sprites.py</code> in this repo.</li>
+      <li id="credit-audio">Music: an original chiptune loop, synthesised by <code>tools/build-rpg-audio.py</code> in this repo.</li>
+      <li>Source: <a href="https://github.com/MicheleRenard/michelerenard.github.io">GitHub</a>.</li>
+    </ul>
+  </details>
+</footer>
+
+<script src="vendor/kaplay.js"></script>
+<script src="data.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

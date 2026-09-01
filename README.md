@@ -28,6 +28,7 @@ Website/
 ├── tools/                maintenance scripts (see below)
 ├── cv/                   public CV PDFs and HTML
 ├── images/               profile photo, favicon, social preview card
+├── rpg/                  "Renard Village" — the RPG easter egg (see below)
 └── _site/                GENERATED. Never edit; gitignored.
 ```
 
@@ -94,6 +95,30 @@ each one as it applies it.
 **`make-og-image.py`** builds the 1200×630 card that LinkedIn, Slack and email
 clients show when the link is shared. Re-run it if the palette, role line or
 photo changes.
+
+## The RPG easter egg (`rpg/`)
+
+`/rpg/` is a small 16-bit RPG version of the site — "Renard Village" — linked
+from the footer's "▶ Press Start". A pixel Michèle walks around a village:
+the Library holds the publications, the Guild Hall shows a status screen built
+from the CV skills section, the Lab covers the research programmes. It is a
+static page (vendored KAPLAY engine, no build step), declared under
+`resources:` in `_quarto.yml` so `quarto render` copies it into `_site/`.
+
+Three generator scripts keep it reproducible; all are safe to re-run:
+
+```bash
+python3 tools/build-rpg-sprites.py   # all pixel art, from code → rpg/assets/
+python3 tools/build-rpg-data.py     # references.bib + CV skills → rpg/data.js
+python3 tools/build-rpg-audio.py    # synthesised chiptune → rpg/assets/audio/
+```
+
+`build-rpg-data.py` reads the private CV **whitelist-only** (just the skills
+section) and fails loudly if any private string reaches the output — same
+discipline as `build-cv-pdf.py`. Its headline numbers (participants,
+person-nights, …) are constants mirroring `index.qmd`; update them on the
+February/August cadence along with everything else, then re-run it after
+`update-publications.py` so the Library stays current.
 
 ## Keeping it current
 

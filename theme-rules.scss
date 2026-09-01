@@ -205,6 +205,13 @@ table {
   color: $muted;
 }
 
+// The RPG easter egg: quiet in the footer until hovered.
+a.press-start {
+  color: $muted;
+  letter-spacing: 0.04em;
+  &:hover { color: $ember; }
+}
+
 // --- Buttons --------------------------------------------------------------
 .btn-ember {
   display: inline-block;
