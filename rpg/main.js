@@ -1,4 +1,4 @@
-// Renard Village — a 16-bit portfolio RPG.
+// Emberrest — a 16-bit portfolio RPG.
 // One file, deliberately: === ENGINE === === WORLD === === PLAYER ===
 // === UI (FF windows, DOM) === === CONTENT === === AUDIO ===
 // Assets come from tools/build-rpg-sprites.py; data.js from tools/build-rpg-data.py.
@@ -104,14 +104,17 @@ const groundTiles = {
   h: () => [k.sprite("tiles", { frame: 7 }), k.area(), k.body({ isStatic: true })],
 };
 
-// Solid props and buildings: [sprite, x, y, w, h]; interact zones separate.
+// Solid props and buildings: sprite, position, size. Bottom edges align with
+// the paths (y=80 top row, y=176 side row); heights differ per building.
+// Only the lower `solid` px block, the walls, collides — the player can walk
+// behind a tall roof and be drawn behind it (y-sorted).
 const BUILDINGS = [
-  { spr: "lab", x: 56, y: 16, w: 64, h: 64 },
-  { spr: "library", x: 216, y: 24, w: 48, h: 56 },
-  { spr: "guild", x: 312, y: 24, w: 48, h: 56 },
-  { spr: "inn", x: 24, y: 120, w: 56, h: 56 },
-  { spr: "shop", x: 312, y: 120, w: 48, h: 56 },
-  { spr: "fountain", x: 184, y: 104, w: 32, h: 32 },
+  { spr: "lab", x: 56, y: 8, w: 64, h: 72, solid: 44 },
+  { spr: "library", x: 216, y: 16, w: 48, h: 64, solid: 44 },
+  { spr: "guild", x: 312, y: 16, w: 48, h: 64, solid: 44 },
+  { spr: "inn", x: 24, y: 100, w: 56, h: 76, solid: 50 },
+  { spr: "shop", x: 312, y: 112, w: 48, h: 64, solid: 44 },
+  { spr: "fountain", x: 184, y: 104, w: 32, h: 32, solid: 24 },
 ];
 
 // ============================== UI (FF windows) ============================
@@ -425,7 +428,7 @@ function innDialogue() {
     pages: [
       { text: "Welcome, traveller! Rooms are 28°C — we're working on it." },
       { text: "Your host is Michèle Renard: environmental physiologist and quantitative researcher, working on how heat shapes sleep, physiological strain and health in real-world populations." },
-      { text: "She works where field measurement meets statistical modelling, alongside early career researchers across two national programmes." },
+      { text: "He works where field measurement meets statistical modelling, alongside early career researchers across two national programmes." },
       { text: "Care to leave a message?",
         html: `<p>${link("mailto:mrenard@nus.edu.sg", "✉ mrenard@nus.edu.sg")}<br>` +
           `${link("https://www.linkedin.com/in/michelerenard/", "▸ LinkedIn")} · ` +
@@ -496,7 +499,7 @@ function signDialogue() {
   openDialogue({
     tab: "Signpost",
     pages: [
-      { text: "RENARD VILLAGE — pop. 1 researcher, 122 study participants, 1 cat." },
+      { text: "EMBERREST — pop. 1 researcher, 122 study participants, 1 cat." },
       { text: "Move: arrow keys / WASD, or tap where you want to go. Interact: Z, Enter, or tap. Status screen: M. Close windows: Esc." },
     ],
   });
@@ -559,7 +562,7 @@ k.scene("village", () => {
     k.add([
       k.sprite(b.spr),
       k.pos(b.x, b.y),
-      k.area({ shape: new k.Rect(k.vec2(0, b.h * 0.35), b.w, b.h * 0.65) }),
+      k.area({ shape: new k.Rect(k.vec2(0, b.h - b.solid), b.w, b.solid) }),
       k.body({ isStatic: true }),
       k.z(b.y + b.h),
     ]);

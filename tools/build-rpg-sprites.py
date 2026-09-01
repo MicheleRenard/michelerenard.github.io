@@ -4,7 +4,7 @@ Draw every original pixel-art asset for the RPG page (rpg/assets/).
 
 All art is generated from this file — the character from pixel-string grids
 (reviewable in a text diff), the tiles and buildings procedurally — so the
-whole look of Renard Village is reproducible and editable without an image
+whole look of Emberrest is reproducible and editable without an image
 editor. Safe to re-run at any time; prints every file it writes.
 
     python3 tools/build-rpg-sprites.py
@@ -307,6 +307,25 @@ def grid_to_img(grid, palette=PAL):
     return img
 
 
+INK = (27, 36, 50)
+
+
+def outline(img, color=INK):
+    """1px dark outline around every opaque region — the SNES sprite look."""
+    w, h = img.size
+    src = img.load()
+    out = img.copy()
+    dst = out.load()
+    for y in range(h):
+        for x in range(w):
+            if src[x, y][3] == 0 and any(
+                0 <= x + dx < w and 0 <= y + dy < h and src[x + dx, y + dy][3] > 0
+                for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))
+            ):
+                dst[x, y] = (*color, 255)
+    return out
+
+
 def sheet(frames_by_row, frame_w, frame_h):
     """frames_by_row: list of rows, each row a list of PIL images."""
     rows = len(frames_by_row)
@@ -325,9 +344,9 @@ def save(img, path):
 
 
 def build_michele():
-    down = [grid_to_img(g) for g in (DOWN_STAND, DOWN_A, DOWN_B)]
-    up = [grid_to_img(g) for g in (UP_STAND, UP_A, UP_B)]
-    right = [grid_to_img(g) for g in (RIGHT_STAND, RIGHT_A, RIGHT_B)]
+    down = [outline(grid_to_img(g)) for g in (DOWN_STAND, DOWN_A, DOWN_B)]
+    up = [outline(grid_to_img(g)) for g in (UP_STAND, UP_A, UP_B)]
+    right = [outline(grid_to_img(g)) for g in (RIGHT_STAND, RIGHT_A, RIGHT_B)]
     left = [f.transpose(Image.FLIP_LEFT_RIGHT) for f in right]
     # rows: down, up, right, left  -> 48x96
     save(sheet([down, up, right, left], 16, 24), OUT_SPRITES / "michele-walk.png")
@@ -474,8 +493,8 @@ SIGN = [
 
 
 def build_npcs():
-    crier = [grid_to_img(g, CRIER_PAL) for g in (CRIER_A, CRIER_B)]
-    cat = [grid_to_img(g, CAT_PAL) for g in (CAT_SIT, CAT_TAIL)]
+    crier = [outline(grid_to_img(g, CRIER_PAL)) for g in (CRIER_A, CRIER_B)]
+    cat = [outline(grid_to_img(g, CAT_PAL)) for g in (CAT_SIT, CAT_TAIL)]
     save(sheet([crier], 16, 24), OUT_SPRITES / "crier.png")
     save(sheet([cat], 16, 16), OUT_SPRITES / "cat.png")
     save(grid_to_img(SIGN, SIGN_PAL), OUT_SPRITES / "sign.png")
@@ -483,24 +502,29 @@ def build_npcs():
 
 # ---------------------------------------------------------------------------
 # Ground tiles (16x16), procedural. Order in tiles.png (one row):
-#   0 grass  1 grass-speckle  2 flowers  3 path  4 path-edge-n
+#   0 grass  1 grass-speckle  2 flowers  3 path  4 path-stones
 #   5 tree   6 water  7 fence  8 cobble-plaza
 # ---------------------------------------------------------------------------
 
-GRASS = (74, 143, 60)
-GRASS_D = (58, 115, 48)
-GRASS_L = (90, 163, 72)
-PATH = (201, 178, 133)
-PATH_D = (172, 148, 105)
-WATER = (58, 102, 200)
-WATER_L = (90, 134, 232)
+GRASS = (88, 152, 64)
+GRASS_D = (68, 124, 50)
+GRASS_L = (110, 176, 80)
+PATH = (204, 176, 124)
+PATH_D = (172, 142, 96)
+PATH_L = (222, 198, 152)
+WATER = (52, 96, 192)
+WATER_L = (96, 144, 236)
+WATER_W = (196, 220, 252)
 TRUNK = (107, 74, 43)
-LEAF = (45, 107, 45)
-LEAF_L = (61, 143, 61)
+TRUNK_D = (78, 52, 30)
+LEAF = (38, 96, 44)
+LEAF_M = (52, 126, 56)
+LEAF_L = (84, 160, 76)
 FENCE = (139, 100, 60)
 FENCE_D = (100, 70, 40)
-PLAZA = (188, 178, 160)
-PLAZA_D = (160, 150, 132)
+PLAZA = (196, 186, 168)
+PLAZA_D = (166, 156, 138)
+PLAZA_L = (214, 205, 189)
 
 
 def tile(fill):
@@ -508,16 +532,22 @@ def tile(fill):
     return img, ImageDraw.Draw(img)
 
 
+# deterministic textures — no RNG, so re-runs are byte-identical
+GRASS_DARK_DASHES = [(2, 3), (11, 2), (6, 7), (13, 9), (3, 12), (9, 14), (14, 5)]
+GRASS_LIGHT_DOTS = [(5, 1), (1, 8), (8, 10), (12, 13), (4, 6)]
+
+
 def t_grass(speckled=False, flowers=False):
     img, d = tile(GRASS)
-    # deterministic speckle pattern, no RNG so re-runs are identical
-    for i, (x, y) in enumerate([(2, 3), (12, 2), (7, 7), (3, 12), (13, 11), (9, 14)]):
-        d.point((x, y), GRASS_D if i % 2 else GRASS_L)
+    for x, y in GRASS_DARK_DASHES:
+        d.rectangle([x, y, min(15, x + 1), y], fill=GRASS_D)
+    for x, y in GRASS_LIGHT_DOTS:
+        d.point((x, y), GRASS_L)
     if speckled:
-        for x, y in [(5, 5), (11, 8), (2, 9), (14, 6), (8, 12)]:
-            d.rectangle([x, y, x + 1, y], fill=GRASS_D)
+        for x, y in [(7, 4), (2, 10), (12, 7), (5, 13), (10, 1)]:
+            d.rectangle([x, y, min(15, x + 1), y], fill=GRASS_D)
     if flowers:
-        for x, y, c in [(3, 4, (232, 220, 120)), (11, 6, (224, 148, 148)), (6, 11, (240, 240, 240))]:
+        for x, y, c in [(3, 4, (240, 224, 120)), (11, 6, (230, 148, 148)), (6, 11, (245, 243, 238))]:
             d.point((x, y - 1), c)
             d.rectangle([x - 1, y, x + 1, y], fill=c)
             d.point((x, y + 1), c)
@@ -525,32 +555,48 @@ def t_grass(speckled=False, flowers=False):
     return img
 
 
-def t_path(edge_n=False):
+def t_path(stones=False):
     img, d = tile(PATH)
-    for x, y in [(3, 3), (12, 5), (6, 9), (10, 13), (2, 12)]:
+    for x, y in [(3, 3), (12, 5), (6, 9), (10, 13), (2, 12), (14, 10)]:
         d.point((x, y), PATH_D)
-    if edge_n:
-        d.rectangle([0, 0, 15, 1], fill=GRASS)
-        d.rectangle([0, 2, 15, 2], fill=PATH_D)
+    for x, y in [(8, 2), (4, 7), (13, 14)]:
+        d.point((x, y), PATH_L)
+    if stones:
+        for x, y in [(3, 5), (10, 3), (6, 12), (12, 9)]:
+            d.rectangle([x, y, x + 1, y + 1], fill=PATH_D)
+            d.point((x, y), PATH_L)
     return img
 
 
 def t_tree():
     img, d = tile(GRASS)
-    for i, (x, y) in enumerate([(2, 13), (13, 14)]):
-        d.point((x, y), GRASS_D if i % 2 else GRASS_L)
-    d.rectangle([6, 10, 9, 15], fill=TRUNK)
-    d.ellipse([1, 0, 14, 11], fill=LEAF)
-    d.ellipse([3, 1, 10, 7], fill=LEAF_L)
-    d.point((5, 3), (200, 230, 200))
+    for x, y in [(1, 14), (14, 13)]:
+        d.point((x, y), GRASS_D)
+    # canopy: dark base, mid body, light crown, ink rim
+    d.ellipse([0, 0, 15, 11], fill=INK)
+    d.ellipse([1, 1, 14, 10], fill=LEAF)
+    d.ellipse([2, 1, 13, 8], fill=LEAF_M)
+    d.ellipse([4, 2, 11, 6], fill=LEAF_L)
+    # trunk below the canopy, with shadow edge
+    d.rectangle([6, 11, 9, 15], fill=TRUNK)
+    d.rectangle([6, 11, 6, 15], fill=TRUNK_D)
+    d.rectangle([5, 15, 10, 15], fill=TRUNK_D)
+    for x, y in [(5, 3), (9, 2), (7, 5)]:
+        d.point((x, y), (200, 230, 190))
+    for x, y in [(3, 8), (11, 8), (7, 10)]:
+        d.point((x, y), LEAF)
     return img
 
 
 def t_water():
     img, d = tile(WATER)
-    for y in (3, 8, 13):
+    for i, y in enumerate((2, 7, 12)):
         for x0 in (1, 9):
-            d.rectangle([x0, y, x0 + 4, y], fill=WATER_L)
+            xo = (x0 + i * 3) % 12
+            d.rectangle([xo, y, xo + 3, y], fill=WATER_L)
+            d.point((xo, y), WATER_W)
+    d.point((13, 4), WATER_W)
+    d.point((5, 10), WATER_W)
     return img
 
 
@@ -559,17 +605,23 @@ def t_fence():
     d.rectangle([0, 6, 15, 8], fill=FENCE)
     d.rectangle([0, 8, 15, 8], fill=FENCE_D)
     for x in (2, 8, 14):
-        d.rectangle([x - 1, 3, x + 1, 12], fill=FENCE)
-        d.rectangle([x - 1, 12, x + 1, 12], fill=FENCE_D)
+        d.rectangle([x - 1, 3, min(15, x + 1), 12], fill=FENCE)
+        d.rectangle([x - 1, 12, min(15, x + 1), 12], fill=FENCE_D)
         d.point((x, 3), (170, 130, 85))
     return img
 
 
 def t_plaza():
     img, d = tile(PLAZA)
+    # 8x8 flagstones with light top-left edges and dark grout
     d.line([(0, 7), (15, 7)], fill=PLAZA_D)
+    d.line([(0, 15), (15, 15)], fill=PLAZA_D)
     d.line([(7, 0), (7, 7)], fill=PLAZA_D)
     d.line([(11, 8), (11, 15)], fill=PLAZA_D)
+    for x, y in [(0, 0), (8, 0), (0, 8), (12, 8)]:
+        d.line([(x, y), (min(15, x + 5), y)], fill=PLAZA_L)
+    d.point((4, 4), PLAZA_D)
+    d.point((13, 12), PLAZA_D)
     return img
 
 
@@ -579,7 +631,7 @@ def build_tiles():
         t_grass(speckled=True),
         t_grass(flowers=True),
         t_path(),
-        t_path(edge_n=True),
+        t_path(stones=True),
         t_tree(),
         t_water(),
         t_fence(),
@@ -592,79 +644,196 @@ def build_tiles():
 
 
 # ---------------------------------------------------------------------------
-# Buildings, procedural. FF town look: white plaster, timber, steep blue roofs.
-# One PNG per building so main.js can place them without slicing arithmetic.
+# Buildings, procedural, one PNG each. FF town look: steep outlined roofs,
+# plaster + timber walls, arched doors — and each building announces its
+# trade with a hanging sign (bed, book, shield, flask, potion), so an inn
+# reads as an inn from across the square.
+# Sprite bottoms are what main.js aligns to; heights differ per building.
 # ---------------------------------------------------------------------------
 
-PLASTER = (232, 220, 192)
-PLASTER_D = (205, 190, 160)
-TIMBER = (122, 88, 56)
-ROOF = (48, 80, 200)
-ROOF_L = (74, 106, 224)
-ROOF_D = (36, 60, 160)
-ROOF_EMBER = (180, 85, 43)
-ROOF_EMBER_L = (208, 116, 72)
-ROOF_EMBER_D = (143, 65, 31)
-DOOR = (94, 62, 34)
-DOOR_L = (122, 88, 56)
-GLASS = (120, 200, 232)
-GLASS_D = (80, 150, 190)
-INK = (27, 36, 50)
+PLASTER = (236, 224, 196)
+PLASTER_D = (208, 192, 160)
+PLASTER_L = (246, 238, 218)
+TIMBER = (110, 78, 48)
+TIMBER_D = (82, 56, 32)
+ROOF_BLUE = (54, 88, 208)
+ROOF_BLUE_L = (86, 120, 232)
+ROOF_BLUE_D = (38, 62, 158)
+ROOF_EMBER = (188, 92, 46)
+ROOF_EMBER_L = (214, 122, 74)
+ROOF_EMBER_D = (146, 66, 32)
+ROOF_NIGHT = (52, 100, 116)
+ROOF_NIGHT_L = (76, 128, 146)
+ROOF_NIGHT_D = (36, 72, 84)
+ROOF_PLUM = (108, 72, 152)
+ROOF_PLUM_L = (134, 96, 180)
+ROOF_PLUM_D = (80, 50, 116)
+DOOR = (96, 64, 36)
+DOOR_L = (126, 90, 56)
+GLASS = (130, 205, 235)
+GLASS_D = (86, 156, 194)
+GOLD = (222, 186, 92)
+EMBER = (180, 85, 43)
+NIGHT = (47, 90, 105)
+WHITE = (245, 243, 238)
+
+ICON_COLS = {".": None, "K": INK, "W": WHITE, "E": EMBER, "N": NIGHT, "Y": GOLD}
+
+ICON_BED = [
+    ".......",
+    ".K.....",
+    ".KKKKK.",
+    ".KWWEE.",
+    ".KKKKK.",
+    ".K...K.",
+    ".......",
+]
+
+ICON_BOOK = [
+    ".......",
+    ".KKKKK.",
+    ".KWKWK.",
+    ".KWKWK.",
+    ".KWKWK.",
+    ".KKKKK.",
+    ".......",
+]
+
+ICON_SHIELD = [
+    ".KKKKK.",
+    ".KNNNK.",
+    ".KNENK.",
+    ".KNNNK.",
+    "..KNK..",
+    "...K...",
+    ".......",
+]
+
+ICON_FLASK = [
+    "..KKK..",
+    "..KWK..",
+    "..KWK..",
+    ".KWWWK.",
+    ".KEEEK.",
+    ".KKKKK.",
+    ".......",
+]
+
+ICON_POTION = [
+    "..KKK..",
+    "..KWK..",
+    ".KWWWK.",
+    ".KYYYK.",
+    ".KYYYK.",
+    ".KKKKK.",
+    ".......",
+]
 
 
-def building(w, h, roof_h, roof=(ROOF, ROOF_L, ROOF_D), banner=None):
-    """Generic FF-style house: steep roof, plaster walls, timber frame, door."""
+def draw_icon(d, icon, ox, oy):
+    for y, row in enumerate(icon):
+        for x, ch in enumerate(row):
+            c = ICON_COLS[ch]
+            if c is not None:
+                d.point((ox + x, oy + y), c)
+
+
+def hanging_sign(d, icon, x, y):
+    """A 9x11 wooden sign board hanging from a bracket at (x, y) topleft."""
+    d.rectangle([x + 3, y, x + 8, y], fill=TIMBER_D)         # bracket arm
+    d.point((x + 4, y + 1), TIMBER_D)                        # chain
+    d.point((x + 7, y + 1), TIMBER_D)
+    d.rectangle([x + 1, y + 2, x + 9, y + 10], fill=TIMBER)  # board
+    d.rectangle([x + 1, y + 2, x + 9, y + 2], fill=TIMBER_D)
+    d.rectangle([x + 1, y + 10, x + 9, y + 10], fill=TIMBER_D)
+    draw_icon(d, icon, x + 2, y + 3)
+
+
+def roof_trapezoid(d, w, roof_h, cols):
+    rc, rl, rd = cols
+    slope = max(1, (w // 2 - 4)) / max(1, roof_h)
+    for y in range(roof_h):
+        inset = int((roof_h - 1 - y) * slope * 0.55)
+        d.rectangle([inset, y, w - 1 - inset, y], fill=rc)
+        if 1 <= y < roof_h - 3 and y % 3 == 1:
+            d.line([(inset + 1, y), (w - 2 - inset, y)], fill=rl)
+    top_inset = int((roof_h - 1) * slope * 0.55)
+    d.rectangle([top_inset, 0, w - 1 - top_inset, 0], fill=rd)   # ridge
+    d.rectangle([0, roof_h - 3, w - 1, roof_h - 2], fill=rd)     # eave shadow
+    d.rectangle([0, roof_h - 1, w - 1, roof_h - 1], fill=INK)    # eave line
+
+
+def window(d, x, y, w=7, h=7):
+    d.rectangle([x, y, x + w - 1, y + h - 1], fill=INK)
+    d.rectangle([x + 1, y + 1, x + w - 2, y + h - 2], fill=GLASS)
+    d.line([(x + w // 2, y + 1), (x + w // 2, y + h - 2)], fill=GLASS_D)
+    d.line([(x + 1, y + h // 2), (x + w - 2, y + h // 2)], fill=GLASS_D)
+    d.point((x + 1, y + 1), (200, 235, 248))
+    d.rectangle([x, y + h, x + w - 1, y + h], fill=PLASTER_D)    # sill
+
+
+def arched_door(d, x, y_bottom, dw=10, dh=14):
+    y0 = y_bottom - dh + 1
+    d.rectangle([x, y0 + 2, x + dw - 1, y_bottom], fill=INK)
+    d.rectangle([x + 1, y0, x + dw - 2, y_bottom], fill=INK)
+    d.rectangle([x + 1, y0 + 3, x + dw - 2, y_bottom], fill=DOOR)
+    d.rectangle([x + 2, y0 + 1, x + dw - 3, y_bottom], fill=DOOR)
+    for px in range(x + 2, x + dw - 2, 2):                       # planks
+        d.line([(px, y0 + 2), (px, y_bottom - 1)], fill=DOOR_L)
+    d.point((x + dw - 3, y_bottom - 6), GOLD)                    # handle
+
+
+def house(w, h, roof_h, roof_cols, sign_icon=None, stories=1,
+          awning=False, chimney=False, pennant=False):
     img = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
-    rc, rl, rd = roof
-    # roof: trapezoid
-    for y in range(roof_h):
-        inset = max(0, (roof_h - 1 - y) * w // (roof_h * 3))
-        d.rectangle([inset, y, w - 1 - inset, y], fill=rc)
-    d.rectangle([0, roof_h - 3, w - 1, roof_h - 2], fill=rd)   # eave shadow
-    for y in range(1, roof_h - 3, 3):                          # shingle lines
-        inset = max(0, (roof_h - 1 - y) * w // (roof_h * 3))
-        d.line([(inset + 1, y), (w - 2 - inset, y)], fill=rl)
-    # walls
+    roof_trapezoid(d, w, roof_h, roof_cols)
+    # walls: 2px inset from the roof edges
     d.rectangle([2, roof_h, w - 3, h - 1], fill=PLASTER)
-    d.rectangle([2, roof_h, 3, h - 1], fill=PLASTER_D)
-    d.rectangle([w - 4, roof_h, w - 3, h - 1], fill=PLASTER_D)
-    d.rectangle([2, h - 2, w - 3, h - 1], fill=PLASTER_D)
-    # timber frame
-    d.rectangle([2, roof_h, w - 3, roof_h], fill=TIMBER)
-    d.rectangle([2, h - 1, w - 3, h - 1], fill=TIMBER)
-    # door, centred
+    d.rectangle([3, roof_h, w - 4, roof_h + 1], fill=PLASTER_L)  # light under eave
+    # timber frame: corner posts, base, beam under eave
+    d.rectangle([2, roof_h, 3, h - 1], fill=TIMBER)
+    d.rectangle([w - 4, roof_h, w - 3, h - 1], fill=TIMBER)
+    d.rectangle([2, h - 2, w - 3, h - 1], fill=TIMBER)
+    d.rectangle([2, h - 1, w - 3, h - 1], fill=TIMBER_D)
+    wall_top = roof_h
+    if stories == 2:
+        mid = roof_h + (h - roof_h) // 2 - 2
+        d.rectangle([2, mid, w - 3, mid + 1], fill=TIMBER)       # storey beam
+        for wx in (7, w - 14):                                   # upper windows
+            window(d, wx, roof_h + 4)
+        wall_top = mid + 2
+    # door, centred on the sprite
     dw = 10
     dx = (w - dw) // 2
-    d.rectangle([dx, h - 14, dx + dw - 1, h - 1], fill=DOOR)
-    d.rectangle([dx + 1, h - 13, dx + dw - 2, h - 3], fill=DOOR_L)
-    d.point((dx + dw - 3, h - 8), INK)  # handle
-    # windows either side of the door
-    wy = h - 13
-    for wx in (5, w - 12):
-        d.rectangle([wx, wy, wx + 6, wy + 6], fill=INK)
-        d.rectangle([wx + 1, wy + 1, wx + 5, wy + 5], fill=GLASS)
-        d.line([(wx + 3, wy + 1), (wx + 3, wy + 5)], fill=GLASS_D)
-        d.line([(wx + 1, wy + 3), (wx + 5, wy + 3)], fill=GLASS_D)
-    if banner:
-        bw = len(banner) * 2 + 4
-        bx = (w - bw) // 2
-        d.rectangle([bx, roof_h + 2, bx + bw, roof_h + 8], fill=banner)
-        d.rectangle([bx, roof_h + 2, bx + bw, roof_h + 2], fill=INK)
-    return img
-
-
-def b_lab():
-    # the big one: ember roof (site accent), wide, a chimney-flask
-    img = building(64, 64, 26, roof=(ROOF_EMBER, ROOF_EMBER_L, ROOF_EMBER_D))
-    d = ImageDraw.Draw(img)
-    d.rectangle([50, 2, 55, 12], fill=PLASTER_D)   # chimney
-    d.rectangle([49, 2, 56, 4], fill=INK)
-    # upper window band (it's a lab, it has instruments)
-    for wx in (10, 27, 44):
-        d.rectangle([wx, 30, wx + 8, 36], fill=INK)
-        d.rectangle([wx + 1, 31, wx + 7, 35], fill=GLASS)
-    return img
+    arched_door(d, dx, h - 3)
+    # ground-floor windows flanking the door
+    wy = h - 15
+    if w >= 44:
+        window(d, 6, wy)
+        window(d, w - 13, wy)
+    if sign_icon is not None:
+        hanging_sign(d, sign_icon, dx - 12, h - 18)
+    if awning:
+        ax0, ax1 = dx - 5, dx + dw + 4
+        ay = h - 19
+        for i, x in enumerate(range(ax0, ax1 + 1)):
+            c = EMBER if (i // 3) % 2 == 0 else WHITE
+            d.line([(x, ay), (x, ay + 4)], fill=c)
+            if (i // 3) % 2 == 0 and i % 3 == 1:
+                d.point((x, ay + 5), EMBER)                      # scalloped edge
+        d.rectangle([ax0, ay, ax1, ay], fill=INK)
+        d.rectangle([ax0, ay - 1, ax1, ay - 1], fill=TIMBER_D)
+    if chimney:
+        d.rectangle([w - 14, 2, w - 9, roof_h - 2], fill=PLASTER_D)
+        d.rectangle([w - 15, 2, w - 8, 4], fill=INK)
+        d.point((w - 12, 0), (210, 210, 210))                    # smoke
+    if pennant:
+        top_inset = int((roof_h - 1) * (max(1, (w // 2 - 4)) / max(1, roof_h)) * 0.55)
+        px = w // 2
+        d.rectangle([px, 0, px, 6], fill=TIMBER_D)
+        d.polygon([(px + 1, 0), (px + 7, 2), (px + 1, 4)], fill=EMBER)
+    return outline(img)
 
 
 def b_fountain():
@@ -672,21 +841,33 @@ def b_fountain():
     d = ImageDraw.Draw(img)
     d.ellipse([1, 8, 30, 30], fill=PLAZA_D)
     d.ellipse([3, 10, 28, 28], fill=PLAZA)
+    d.ellipse([4, 11, 27, 20], fill=PLAZA_L)
     d.ellipse([6, 12, 25, 26], fill=WATER)
     d.ellipse([9, 14, 22, 22], fill=WATER_L)
+    d.point((12, 16), WATER_W)
+    d.point((19, 19), WATER_W)
     d.rectangle([13, 4, 18, 18], fill=PLAZA)
-    d.rectangle([13, 4, 18, 5], fill=PLAZA_D)
-    d.point((15, 2), WATER_L)
-    d.point((16, 1), WATER_L)
-    return img
+    d.rectangle([13, 4, 14, 18], fill=PLAZA_L)
+    d.rectangle([12, 3, 19, 4], fill=PLAZA_D)
+    d.point((15, 1), WATER_L)
+    d.point((16, 0), WATER_W)
+    d.point((14, 2), WATER_W)
+    return outline(img)
 
 
+# (name, width, height, roof_h, roof colours, extras) — bottoms are fixed by
+# main.js: top row buildings end at y=80, the inn and shop at y=176.
 def build_buildings():
-    save(b_lab(), OUT_TILES / "lab.png")
-    save(building(48, 56, 20), OUT_TILES / "library.png")
-    save(building(48, 56, 20, roof=(ROOF_D, ROOF, (24, 40, 110))), OUT_TILES / "guild.png")
-    save(building(56, 56, 22, roof=((47, 90, 105), (70, 120, 138), (33, 66, 78))), OUT_TILES / "inn.png")
-    save(building(48, 56, 20, roof=(ROOF_EMBER, ROOF_EMBER_L, ROOF_EMBER_D)), OUT_TILES / "shop.png")
+    save(house(64, 72, 24, (ROOF_EMBER, ROOF_EMBER_L, ROOF_EMBER_D),
+               sign_icon=ICON_FLASK, chimney=True), OUT_TILES / "lab.png")
+    save(house(48, 64, 20, (ROOF_BLUE, ROOF_BLUE_L, ROOF_BLUE_D),
+               sign_icon=ICON_BOOK), OUT_TILES / "library.png")
+    save(house(48, 64, 20, (ROOF_PLUM, ROOF_PLUM_L, ROOF_PLUM_D),
+               sign_icon=ICON_SHIELD, pennant=True), OUT_TILES / "guild.png")
+    save(house(56, 76, 22, (ROOF_NIGHT, ROOF_NIGHT_L, ROOF_NIGHT_D),
+               sign_icon=ICON_BED, stories=2), OUT_TILES / "inn.png")
+    save(house(48, 64, 20, (ROOF_EMBER, ROOF_EMBER_L, ROOF_EMBER_D),
+               sign_icon=ICON_POTION, awning=True), OUT_TILES / "shop.png")
     save(b_fountain(), OUT_TILES / "fountain.png")
 
 

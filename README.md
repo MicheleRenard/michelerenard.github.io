@@ -28,7 +28,7 @@ Website/
 ├── tools/                maintenance scripts (see below)
 ├── cv/                   public CV PDFs and HTML
 ├── images/               profile photo, favicon, social preview card
-├── rpg/                  "Renard Village" — the RPG easter egg (see below)
+├── rpg/                  "Emberrest" — the RPG easter egg (see below)
 └── _site/                GENERATED. Never edit; gitignored.
 ```
 
@@ -98,7 +98,7 @@ photo changes.
 
 ## The RPG easter egg (`rpg/`)
 
-`/rpg/` is a small 16-bit RPG version of the site — "Renard Village" — linked
+`/rpg/` is a small 16-bit RPG version of the site — "Emberrest" — linked
 from the footer's "▶ Press Start". A pixel Michèle walks around a village:
 the Library holds the publications, the Guild Hall shows a status screen built
 from the CV skills section, the Lab covers the research programmes. It is a
