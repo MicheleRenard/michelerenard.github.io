@@ -58,11 +58,38 @@ k.onLoad(() => console.log("[rpg] all assets loaded"));
 window.__rpg = { k };
 
 // KAPLAY receives keys via the canvas element, so it must hold focus for
-// arrow keys to work without a click first.
+// Z / Enter / M to work without a click first.
 const gameCanvas = document.getElementById("game");
 gameCanvas.setAttribute("tabindex", "0");
 window.addEventListener("load", () => gameCanvas.focus({ preventScroll: true }));
 gameCanvas.focus({ preventScroll: true });
+
+// Movement keys are tracked here, on the window, rather than through
+// k.isKeyDown(). KAPLAY only listens on the canvas, so when a dialogue opens
+// (and takes focus) while an arrow key is still held, the key-up lands on the
+// dialogue and the engine never sees it — the player walked forever after
+// talking to the innkeeper. Window-level listeners see every key-up wherever
+// focus is, and blur / tab-switch clear everything held.
+const KEY_DIRS = {
+  ArrowUp: "up", ArrowDown: "down", ArrowLeft: "left", ArrowRight: "right",
+  w: "up", s: "down", a: "left", d: "right",
+  W: "up", S: "down", A: "left", D: "right",
+};
+const heldKeys = { up: false, down: false, left: false, right: false };
+const clearHeldKeys = () => { for (const d in heldKeys) heldKeys[d] = false; };
+window.addEventListener("keydown", (e) => {
+  const dir = KEY_DIRS[e.key];
+  if (!dir) return;
+  heldKeys[dir] = true;
+  // Stop arrow keys scrolling the page when the canvas has lost focus.
+  if (e.key.startsWith("Arrow") && !uiOpen()) e.preventDefault();
+});
+window.addEventListener("keyup", (e) => {
+  const dir = KEY_DIRS[e.key];
+  if (dir) heldKeys[dir] = false;
+});
+window.addEventListener("blur", clearHeldKeys);
+document.addEventListener("visibilitychange", () => { if (document.hidden) clearHeldKeys(); });
 
 k.loadSprite("michele", "assets/sprites/michele-walk.png", {
   sliceX: 3,
@@ -617,12 +644,7 @@ k.scene("village", () => {
   let swappedAxis = false;    // one axis swap allowed per target
   const virtualKeys = { up: false, down: false, left: false, right: false };
 
-  const keyDown = (dir) => {
-    const maps = {
-      up: ["up", "w"], down: ["down", "s"], left: ["left", "a"], right: ["right", "d"],
-    };
-    return maps[dir].some((key) => k.isKeyDown(key)) || virtualKeys[dir];
-  };
+  const keyDown = (dir) => heldKeys[dir] || virtualKeys[dir];
 
   function feet() {
     return k.vec2(player.pos.x + 8, player.pos.y + 20);
@@ -677,6 +699,10 @@ k.scene("village", () => {
     btn.addEventListener("pointerleave", off);
     btn.addEventListener("pointercancel", off);
   });
+  const releaseVirtualKeys = () => { for (const d in virtualKeys) virtualKeys[d] = false; };
+  window.addEventListener("pointerup", releaseVirtualKeys);
+  window.addEventListener("pointercancel", releaseVirtualKeys);
+  window.addEventListener("blur", releaseVirtualKeys);
   document.getElementById("btn-a").addEventListener("pointerdown", (e) => {
     e.preventDefault();
     tryInteract();
@@ -757,22 +783,33 @@ k.go("village");
   const audio = new Audio();
   audio.loop = true;
   audio.volume = 0.55;
-  let available = false;
-  audio.addEventListener("canplaythrough", () => { available = true; });
+  audio.preload = "auto";
   audio.addEventListener("error", () => { btn.hidden = true; });
   audio.src = "assets/audio/theme.m4a";
 
   let on = false;
-  btn.addEventListener("click", () => {
-    if (!available) return;
-    on = !on;
-    if (on) audio.play().catch(() => { on = false; });
-    else audio.pause();
+  const render = () => {
     btn.textContent = on ? "♪ on" : "♪ off";
     btn.setAttribute("aria-pressed", String(on));
     btn.title = on ? "Music (on)" : "Music (off)";
-    try { localStorage.setItem("rpg-audio", on ? "1" : "0"); } catch (e) { /* private mode */ }
+  };
+  // No readiness gate: mobile Safari does not fetch media until a user
+  // gesture starts playback, so waiting for "canplaythrough" first meant the
+  // button never worked on phones. play() is called inside the tap itself,
+  // which is what autoplay policies require; it buffers as needed.
+  btn.addEventListener("click", () => {
+    if (on) {
+      audio.pause();
+      on = false;
+      render();
+      return;
+    }
+    on = true;
+    render();
+    audio.play().catch(() => { on = false; render(); });
   });
+  // If playback stalls out for any reason, keep the label honest.
+  audio.addEventListener("pause", () => { if (on) { on = false; render(); } });
 })();
 
 document.getElementById("status-button").addEventListener("click", () => {
