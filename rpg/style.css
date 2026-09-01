@@ -1,0 +1,253 @@
+/* Emberrest — FF-style UI.
+   Palette echoes the main site: ink #1B2432, ember #B4552B, night #2F5A69. */
+
+:root {
+  --ff-blue-top: #2038c8;
+  --ff-blue-mid: #0c1c96;
+  --ff-blue-bot: #060e6a;
+  --ff-white: #f8f8f8;
+  --ff-shadow: #000820;
+  --ink: #1B2432;
+  --ember: #B4552B;
+  --night: #2F5A69;
+  --px-font: "Press Start 2P", "Courier New", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--ff-shadow);
+  font-family: var(--px-font);
+  color: var(--ff-white);
+}
+
+/* ---- skip link: always visible, top of page ---- */
+.skip-link {
+  display: block;
+  text-align: center;
+  padding: 6px 8px;
+  font-size: 10px;
+  color: var(--ff-white);
+  background: var(--ink);
+  text-decoration: none;
+}
+.skip-link:hover, .skip-link:focus { color: #ffd97a; text-decoration: underline; }
+
+/* ---- stage ---- */
+#stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 60px);
+  overflow: hidden;
+}
+
+/* #game-box is sized by main.js to an integer multiple of the 400x288 game
+   so pixels stay square and unwarped; KAPLAY's letterbox fills it exactly. */
+#game-box {
+  width: min(100%, 800px);
+  aspect-ratio: 400 / 288;
+}
+
+#game {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- classic FF window ---- */
+.ff-window {
+  position: absolute;
+  background: linear-gradient(180deg, var(--ff-blue-top) 0%, var(--ff-blue-mid) 55%, var(--ff-blue-bot) 100%);
+  border: 3px solid var(--ff-white);
+  border-radius: 8px;
+  box-shadow:
+    0 0 0 3px var(--ff-shadow),          /* dark gap */
+    0 0 0 5px var(--ff-white),           /* thin outer white line */
+    0 6px 0 5px rgba(0, 8, 32, 0.55);    /* drop */
+  padding: 18px 20px 16px;
+  font-size: 12px;
+  line-height: 1.9;
+  max-width: min(92vw, 620px);
+}
+
+.ff-window a { color: #ffd97a; text-decoration: underline; text-underline-offset: 3px; }
+.ff-window a:hover, .ff-window a:focus { color: #fff2c8; }
+
+.ff-tab {
+  position: absolute;
+  top: -14px;
+  left: 14px;
+  margin: 0;
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--ff-white);
+  background: var(--ember);
+  border: 2px solid var(--ff-white);
+  border-radius: 6px;
+}
+.ff-tab.night { background: var(--night); }
+
+/* ---- dialogue ---- */
+.ff-dialogue {
+  left: 50%;
+  bottom: 4%;
+  transform: translateX(-50%);
+  width: min(92vw, 620px);
+  min-height: 96px;
+}
+
+.ff-advance {
+  position: absolute;
+  right: 14px;
+  bottom: 6px;
+  animation: ff-blink 0.9s steps(1) infinite;
+}
+
+@keyframes ff-blink { 50% { opacity: 0; } }
+
+/* ---- menus ---- */
+.ff-menu {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-width: min(88vw, 420px);
+}
+
+.ff-menu ul {
+  list-style: none;
+  margin: 6px 0;
+  padding: 0;
+  max-height: 54vh;
+  overflow-y: auto;
+}
+
+.ff-menu li { padding: 5px 4px 5px 26px; position: relative; cursor: pointer; }
+
+.ff-menu li[aria-current="true"]::before,
+.ff-menu li:hover::before {
+  content: "▶";
+  position: absolute;
+  left: 2px;
+  color: #ffd97a;
+}
+
+.ff-menu li .sub { display: block; font-size: 9px; opacity: 0.75; line-height: 1.6; }
+
+.ff-hint { font-size: 8px; opacity: 0.6; margin: 10px 0 0; }
+
+/* ---- status ---- */
+.ff-status {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(94vw, 640px);
+}
+
+#status-body {
+  max-height: 62vh;
+  overflow-y: auto;
+}
+
+.ff-status .stat-row { display: flex; justify-content: space-between; gap: 12px; }
+.ff-status .stat-row .label { color: #9fb4ff; }
+.ff-status .stat-row .note { font-size: 8px; opacity: 0.65; align-self: center; text-align: right; }
+.ff-status h3 {
+  font-size: 10px;
+  color: #ffd97a;
+  margin: 14px 0 4px;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+.ff-status .ability { margin: 0 0 8px; }
+.ff-status .ability .items { font-size: 9px; opacity: 0.8; display: block; line-height: 1.7; }
+
+/* ---- HUD ---- */
+#hud {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+#hud button {
+  font-family: var(--px-font);
+  font-size: 9px;
+  color: var(--ff-white);
+  background: rgba(6, 14, 106, 0.85);
+  border: 2px solid var(--ff-white);
+  border-radius: 6px;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+#hud button:hover { background: var(--ff-blue-top); }
+
+/* ---- touch controls ---- */
+#touch-controls { position: absolute; inset: 0; pointer-events: none; }
+
+#dpad {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  display: grid;
+  grid-template-columns: 44px 44px 44px;
+  grid-template-rows: 44px 44px 44px;
+  opacity: 0.72;
+}
+#dpad button[data-dir="up"]    { grid-area: 1 / 2; }
+#dpad button[data-dir="left"]  { grid-area: 2 / 1; }
+#dpad button[data-dir="right"] { grid-area: 2 / 3; }
+#dpad button[data-dir="down"]  { grid-area: 3 / 2; }
+
+#touch-controls button {
+  pointer-events: auto;
+  font-family: var(--px-font);
+  font-size: 12px;
+  color: var(--ff-white);
+  background: rgba(6, 14, 106, 0.8);
+  border: 2px solid var(--ff-white);
+  border-radius: 8px;
+  touch-action: none;
+}
+
+#btn-a {
+  position: absolute;
+  right: 18px;
+  bottom: 34px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50% !important;
+  font-size: 16px !important;
+  opacity: 0.78;
+}
+
+@media (pointer: coarse) {
+  #touch-controls[hidden] { display: block !important; }
+}
+
+/* ---- credits + noscript ---- */
+#credits, .noscript-note {
+  font-size: 9px;
+  line-height: 1.9;
+  color: #cfd6e4;
+  background: var(--ink);
+  padding: 10px 16px 14px;
+}
+#credits a, .noscript-note a { color: #ffd97a; }
+#credits summary { cursor: pointer; }
+#credits ul { margin: 8px 0 0; padding-left: 18px; }
+
+/* ---- reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .ff-advance { animation: none; }
+}
