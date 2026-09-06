@@ -5,8 +5,10 @@ subtitle: "Updated August 2026"
 
 Two versions, depending on what you need.
 
+::: {.actions}
 [Full academic CV (PDF)](cv/master-cv.pdf){.btn-ember}
 [Short CV (PDF)](cv/short-cv.pdf){.btn-outline-ink}
+:::
 
 [Or read them in the browser: [full](cv/master-cv.html) · [short](cv/short-cv.html).]{.subtitle}
 

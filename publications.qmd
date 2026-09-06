@@ -1,13 +1,18 @@
 ---
 title: "Publications"
-subtitle: "Eleven peer-reviewed publications · three under review · six in preparation"
+subtitle: "Eleven peer-reviewed publications · three under review · seven in preparation"
 ---
 
 The peer-reviewed list below is generated directly from my
 [ORCID](https://orcid.org/0000-0003-4517-1316) record via Crossref, so it stays
 in step with the record of registration rather than drifting from it. Citation
 counts are on [Google Scholar](https://scholar.google.com/citations?user=nyVJS9AAAAAJ);
-BibTeX for everything here is [available as a file](references.bib).
+BibTeX for everything here is [available as a file](references.bib), or
+paper by paper from the list.
+
+## Selected
+
+{{< include _publications-featured.md >}}
 
 ## Peer-reviewed
 
@@ -45,3 +50,37 @@ BibTeX for everything here is [available as a file](references.bib).
 **The Nutrition Society Congress 2024** — Belfast. Invited lecture as winner of the UK Postgraduate Competition: *Optimising dietary behaviour — can sports nutrition research contribute to improvements in population health?*
 
 [Full conference record in the [CV](cv.qmd).]{.subtitle}
+
+```{=html}
+<script>
+// Per-paper BibTeX. Each entry carries a hidden <pre class="pub-bib">; this
+// adds a "BibTeX" control to its links row that reveals it and copies it.
+// Nothing is added without JavaScript, so there is no dead control.
+(function () {
+  document.querySelectorAll(".pub-entry").forEach(function (entry) {
+    var pre = entry.querySelector("pre.pub-bib");
+    var links = entry.querySelector(".pub-links");
+    if (!pre || !links) return;
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "pub-bib-toggle";
+    btn.textContent = "BibTeX";
+    btn.setAttribute("aria-expanded", "false");
+    btn.addEventListener("click", function () {
+      var open = pre.hidden;
+      pre.hidden = !open;
+      btn.setAttribute("aria-expanded", String(open));
+      if (open && navigator.clipboard) {
+        navigator.clipboard.writeText(pre.textContent).then(function () {
+          btn.textContent = "BibTeX · copied";
+          setTimeout(function () { btn.textContent = "BibTeX"; }, 1800);
+        }, function () {});
+      } else if (!open) {
+        btn.textContent = "BibTeX";
+      }
+    });
+    links.appendChild(btn);
+  });
+})();
+</script>
+```

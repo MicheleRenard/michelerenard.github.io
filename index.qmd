@@ -6,6 +6,8 @@ description-meta: "Environmental physiologist and quantitative researcher at the
 image: images/og-image.png
 image-alt: "Michèle Renard — Research Fellow, Yong Loo Lin School of Medicine, National University of Singapore"
 toc: false
+# Scopes the homepage-only spacing rules in theme-rules.scss (body.home).
+body-classes: home
 ---
 
 ::: {.hero}
@@ -16,12 +18,23 @@ toc: false
 ::: {}
 # Michèle Renard {.title}
 
-[Research Fellow · Yong Loo Lin School of Medicine, National University of Singapore]{.subtitle}
+[Heat, sleep and population health]{.tagline}
 
 ::: {.lead-in}
-I am an environmental physiologist and quantitative researcher working on how
-heat shapes sleep, physiological strain and health in real-world populations.
+I study how heat affects sleep and health, combining real-world measurements
+with statistical modelling.
 :::
+
+[Research Fellow · Yong Loo Lin School of Medicine, National University of Singapore]{.subtitle}
+
+::: {.actions}
+[Explore my research](research.qmd){.btn-ember}
+[Get in touch](collaborate.qmd){.btn-outline-ink}
+:::
+:::
+:::
+
+## What I work on
 
 Most of my work sits where field measurement meets statistical modelling: large
 longitudinal wearable and sensor datasets, randomised cooling interventions in
@@ -30,54 +43,47 @@ heat-health policy. I lead the statistical analysis for two national research
 programmes — **Project HEATS** and **Cooling Singapore 2.0** — and work
 alongside teams of early career researchers across both.
 
-[Working with me](collaborate.qmd){.btn-ember}
-[Publications](publications.qmd){.btn-outline-ink}
-[Curriculum vitae](cv.qmd){.btn-outline-ink}
-:::
-:::
-
-## What I work on
-
 ::: {.grid-cards}
 ::: {.card-item}
 #### Indoor heat and sleep
 How bedroom temperature and humidity shape sleep continuity in tropical
 homes and dormitories — 122 participants, 10,303 person-nights, three field
 waves.
+
+[Explore this research →](research.qmd#heats){.no-rule}
 :::
 
-::: {.card-item .night}
+::: {.card-item}
 #### Heat vulnerability and advisories
 Evidence synthesis behind Singapore's Exertional Heat Vulnerability Index, and
 a review of how heat-health advisories are designed and whether they work.
+
+[Explore this research →](research.qmd#ehvi){.no-rule}
 :::
 
 ::: {.card-item}
 #### Physiological strain in the heat
 Laboratory responses to controlled heat exposure in children, unacclimatised
 adults and older adults, translated into population-tailored guidance.
+
+[Explore this research →](research.qmd#cs20){.no-rule}
 :::
 
-::: {.card-item .night}
+::: {.card-item}
 #### Behaviour, nutrition and health
 Earlier and continuing work on the determinants of dietary intake — in
 athletes, and in UK households through the cost-of-living crisis.
+
+[Explore this research →](research.qmd#nutrition){.no-rule}
 :::
 :::
 
-## Currently
+## Updates
 
-- Leading the primary analysis of nighttime bedroom temperature and sleep
-  continuity in Singapore homes, and the HEATS exposure protocol
-  (*BMC Public Health*, under review).
-- Leading the evidence-synthesis workstream for the **eHVI** programme
-  (NRF/NEA award CISR-2024-2R-04) as protocol lead and review guarantor.
-- **Lead for Strategic Partnerships, Business Development & External Relations**,
-  NUS Medicine Early Career Researchers Office (2026–27).
-- Four PROSPERO-registered systematic reviews in progress across heat
-  advisories, vulnerability indices, nighttime heat thresholds and cooling.
-
-## Recent
+<!-- Refresh on the February/August cadence (README, step 4). One featured
+     note-box, then a definition list: a date line, and the headline on the
+     next line after ":   ". Keep about three dated entries; retire the
+     oldest when adding a new one. -->
 
 ::: {.note-box}
 **Media, June 2026** — Project HEATS findings were covered in
@@ -87,15 +93,20 @@ following the NRF CREATE Symposium, with the work cited by the Chairman of the
 National Research Foundation Singapore.
 :::
 
-- **Aug 2026** — Six abstracts at the International Conference on Environmental
-  Ergonomics (ICEE), Kuching, including an oral presentation on near-body–room
-  air temperature difference and total sleep time.
-- **Aug 2026** — Invited presenter, *"Which Test, and Why?"*, CLIF Foundational
-  Workshop on Statistical Approaches, NUS.
-- **Jun 2026** — Three oral presentations at Indoor Air 2026, Singapore, plus a
-  featured Project HEATS interactive workshop.
-- **Mar 2026** — Named a **JSPS HOPE Fellow** at the 17th JSPS HOPE Meeting with
-  Nobel Laureates, Tsukuba, Japan.
+::: {.updates}
+Sep 2026
+:   **Lead for Strategic Partnerships, Business Development & External Relations**,
+    NUS Medicine Early Career Researchers Office (2026–27).
+
+Aug 2026
+:   Six abstracts at the International Conference on Environmental
+    Ergonomics (ICEE), Kuching, including an oral presentation on near-body–room
+    air temperature difference and total sleep time.
+
+Mar 2026
+:   Named a **JSPS HOPE Fellow** at the 17th JSPS HOPE Meeting with
+    Nobel Laureates, Tsukuba, Japan.
+:::
 
 ## Elsewhere
 

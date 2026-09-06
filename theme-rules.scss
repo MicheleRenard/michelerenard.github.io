@@ -17,6 +17,13 @@
     font-size: 0.92rem;
     letter-spacing: 0.01em;
   }
+  // Quarto already marks the current page; make it visible rather than
+  // relying on Bootstrap's inherited colour alone.
+  .nav-link.active {
+    color: $ember;
+    font-weight: 600;
+    box-shadow: inset 0 -2px 0 0 $ember;
+  }
 }
 
 // --- Typography -----------------------------------------------------------
@@ -53,6 +60,16 @@ h3 { margin-top: 1.9rem; font-size: 1.18rem; }
   text-transform: uppercase;
   color: $ember;
   margin-bottom: 0.5rem;
+}
+
+// One-line research focus, sitting directly under the title.
+.tagline {
+  display: block;
+  font-family: $headings-font-family;
+  font-size: 1.45rem;
+  line-height: 1.3;
+  color: $ink;
+  margin-bottom: 1rem;
 }
 
 .lead-in {
@@ -101,20 +118,27 @@ a {
 }
 @media (max-width: 700px) {
   .hero { grid-template-columns: 1fr; gap: 1.4rem; }
+  // Cap the real portrait too, not just the placeholder — at 100% it would
+  // otherwise fill a phone screen.
+  .hero img,
   .hero .placeholder { max-width: 200px; }
 }
 
 // --- Card grid ------------------------------------------------------------
+// One column by default, two once there is room. A fixed minimum track width
+// can overflow a narrow content area; minmax(0, …) cannot.
 .grid-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.1rem;
   margin: 1.6rem 0;
+}
+@media (min-width: 720px) {
+  .grid-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 .card-item {
   background: $sand;
   border: 1px solid $border;
-  border-left: 3px solid $ember;
   border-radius: 3px;
   padding: 1.1rem 1.25rem;
   h4 {
@@ -123,7 +147,16 @@ a {
     font-family: $headings-font-family;
   }
   p { margin: 0; font-size: 0.9rem; color: $body; line-height: 1.55; }
-  &.night { border-left-color: $night; }
+  // The "next step" link at the foot of a card. Ember is the one accent the
+  // cards use, so it carries the affordance on its own.
+  p + p { margin-top: 0.7rem; }
+  a.no-rule {
+    font-family: $font-family-sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: $ember;
+    &:hover { color: $ember-dark; text-decoration: underline; }
+  }
 }
 
 // --- Pull quote / callout -------------------------------------------------
@@ -137,36 +170,80 @@ a {
 }
 
 // --- Publication list -----------------------------------------------------
-.pub-list ol {
-  list-style: none;
-  padding-left: 0;
-  counter-reset: pub;
-}
-.pub-list {
-  li {
-    position: relative;
-    padding-left: 2.4rem;
-    margin-bottom: 1.15rem;
-    font-size: 0.93rem;
-    line-height: 1.55;
+// Title first, then quieter metadata, then the links row. The markup is
+// emitted by tools/update-publications.py; keep the class names in step.
+.pub-entry {
+  padding: 0.95rem 0;
+  border-top: 1px solid $border;
+  p { margin: 0; }
+  .pub-title {
+    font-family: $headings-font-family;
+    font-size: 1.06rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: $ink;
+    a { color: inherit; border-bottom: none; }
+    a:hover { color: $ember; }
   }
-  li::before {
-    counter-increment: pub;
-    content: counter(pub);
-    position: absolute;
-    left: 0;
-    top: 0.1rem;
+  .pub-meta {
+    margin-top: 0.3rem;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: $muted;
+    strong { font-weight: 600; color: $body; }
+  }
+  .pub-links {
+    margin-top: 0.35rem;
     font-family: $font-family-sans-serif;
     font-size: 0.78rem;
-    font-weight: 600;
-    color: $ember;
+    letter-spacing: 0.01em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 1rem;
+    row-gap: 0.2rem;
+    a { color: $muted; border-bottom: none; }
+    a:hover { color: $ember; }
+  }
+  // Injected by the script at the foot of publications.qmd; without JS the
+  // whole-file references.bib link at the top of the page covers this.
+  .pub-bib-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: $muted;
+    cursor: pointer;
+    &:hover { color: $ember; }
+    &[aria-expanded="true"] { color: $ember; }
+  }
+  pre.pub-bib {
+    margin: 0.6rem 0 0.2rem;
+    padding: 0.7rem 0.9rem;
+    font-size: 0.76rem;
+    line-height: 1.45;
     background: $sand;
     border: 1px solid $border;
-    border-radius: 2px;
-    width: 1.7rem;
-    text-align: center;
-    padding: 0.1rem 0;
+    border-radius: 3px;
+    color: $body;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
   }
+}
+.pub-list .pub-entry:first-child { border-top: none; padding-top: 0.2rem; }
+
+// Two or three papers set above the complete list, given the card treatment.
+.pub-featured {
+  display: grid;
+  gap: 0.8rem;
+  margin: 1.2rem 0 0.4rem;
+  .pub-entry {
+    border: 1px solid $border;
+    border-radius: 3px;
+    background: $sand;
+    padding: 1rem 1.2rem;
+  }
+  pre.pub-bib { background: $paper; }
 }
 
 .status-tag {
@@ -236,4 +313,88 @@ a.press-start {
   border-radius: 3px;
   margin-right: 0.5rem;
   &:hover { border-color: $ember; color: $ember !important; }
+}
+
+// Wrapping row of buttons with one consistent gap. Pandoc puts consecutive
+// link lines in a single <p>, so the flex rule has to reach that child too.
+.actions,
+.actions > p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+.actions { margin: 1.5rem 0 0; }
+.actions > p { margin: 0; }
+.actions .btn-ember,
+.actions .btn-outline-ink { margin-right: 0; }
+
+// --- Home page rhythm -----------------------------------------------------
+// The homepage carries fewer, larger sections than the inner pages, so it is
+// spaced by whitespace rather than by a rule under every heading.
+body.home {
+  .hero { margin-bottom: 0; }
+
+  main.content > section.level2 {
+    margin-top: 4.5rem;
+  }
+
+  main.content > section.level2 > h2 {
+    margin-top: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  // Keep running prose near 60-70 characters. The value is calibrated by
+  // measurement, not by reading `ch` literally: `ch` is the width of "0",
+  // which in Inter is far wider than the average letter, so 68ch actually
+  // renders 80-91 characters. 50ch measures 59-66. Deliberately shallow
+  // selectors — card and note-box paragraphs keep their own width.
+  main.content > section.level2 > p,
+  main.content > section.level2 > ul {
+    max-width: 50ch;
+  }
+
+  // The featured entry and the dated list share one measure, in rem rather
+  // than ch so the two boxes end at the same edge despite their different
+  // font sizes. 36.5rem is ~60ch of Inter at the root size: wider than the
+  // prose above because the date column takes the first ~7rem of it,
+  // leaving the headline itself near 55-60 characters.
+  main.content > section.level2 > .note-box,
+  main.content > section.level2 > .updates {
+    max-width: 36.5rem;
+  }
+}
+
+// --- Updates (home page) ----------------------------------------------------
+// A definition list — date, then headline — laid out as two columns. Written
+// as plain Markdown so it stays easy to hand-edit twice a year.
+.updates dl {
+  display: grid;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  column-gap: 1rem;
+  row-gap: 0.85rem;
+  margin: 1.4rem 0 0;
+  dt {
+    font-family: $font-family-sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: $muted;
+    padding-top: 0.2rem;
+  }
+  dd {
+    margin: 0;
+    font-size: 0.93rem;
+    line-height: 1.55;
+    p { margin: 0; }
+  }
+}
+@media (max-width: 480px) {
+  .updates dl {
+    grid-template-columns: 1fr;
+    row-gap: 0.15rem;
+    dt { padding-top: 0; }
+    dd + dt { margin-top: 0.9rem; }
+  }
 }

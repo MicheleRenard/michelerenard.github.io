@@ -24,6 +24,7 @@ Website/
 ├── collaborate.qmd       "working with me"
 ├── cv.qmd                CV landing page + summary
 ├── _publications-generated.md   GENERATED from ORCID. Never hand-edit.
+├── _publications-featured.md    GENERATED — the FEATURED papers. Never hand-edit.
 ├── references.bib        GENERATED from ORCID. Reusable BibTeX.
 ├── tools/                maintenance scripts (see below)
 ├── cv/                   public CV PDFs and HTML
@@ -77,14 +78,21 @@ python3 tools/make-og-image.py         # → images/og-image.png
 ```
 
 **`update-publications.py`** reads the public ORCID record, resolves each DOI
-against Crossref, and writes both `_publications-generated.md` (what the site
-renders) and `references.bib` (for reuse). Publishers deposit inconsistent
-metadata, so the script carries three small correction tables — `NAME_FIXES` for
-surnames split across the wrong field, `PROTECTED` for words that survive the
-conversion to sentence case, and `OVERRIDES` for per-DOI fixes. It also carries
+against Crossref, and writes three files: `_publications-generated.md` (the
+complete list), `_publications-featured.md` (the papers set above it) and
+`references.bib` (for reuse). Both `.md` files are raw HTML — title first,
+then author/journal/year metadata, the DOI, and a hidden BibTeX block that a
+small script at the foot of `publications.qmd` turns into a reveal-and-copy
+control. The class names are styled under "Publication list" in
+`theme-rules.scss`. Publishers deposit inconsistent metadata, so the script
+carries three small correction tables — `NAME_FIXES` for surnames split across
+the wrong field, `PROTECTED` for words that survive the conversion to sentence
+case, and `OVERRIDES` for per-DOI fixes (including the year, where a print
+issue arrived after the online publication the CV dates from). It also carries
 `EXCLUDE` (preprints, errata and abstract collections that should not appear as
-publications) and `ORCID_GAPS` (papers on the CV but missing from ORCID). Read
-what it prints: it tells you what it excluded and why.
+publications), `ORCID_GAPS` (papers on the CV but missing from ORCID) and
+`FEATURED` (the two or three DOIs shown under "Selected", in order). Read what
+it prints: it tells you what it excluded and why.
 
 **`build-cv-pdf.py`** renders the public CV PDFs from the private Markdown via
 Quarto's Typst engine — no LaTeX needed. It never writes to the CV repo. Every
@@ -132,9 +140,13 @@ site is the last step of the same cycle:
 3. `python3 tools/update-publications.py` — the peer-reviewed list looks after
    itself. Then update the **under review** and **in preparation** sections of
    `publications.qmd` by hand, since those have no DOI to fetch.
-4. Update the **Currently** and **Recent** sections of `index.qmd`. These are the
-   two blocks that make a site look alive or abandoned; if nothing else gets
-   done, do these.
+4. Update the **Updates** section of `index.qmd`. It is one featured
+   `.note-box` followed by a definition list inside `::: {.updates}` — a date
+   line, then the headline on the next line after `:   `. Keep about three
+   dated entries and retire the oldest; swap the featured item when something
+   bigger lands. This is the block that makes a site look alive or abandoned;
+   if nothing else gets done, do this. Then revisit `FEATURED` in
+   `tools/update-publications.py` if a new paper deserves the "Selected" band.
 5. `quarto render`, check locally in both light and dark, then
    `quarto publish gh-pages`.
 
@@ -159,9 +171,10 @@ Custom classes available in any `.qmd`:
 |---|---|
 | `.lead-in` | Larger serif opening paragraph |
 | `.eyebrow` | Small-caps ember label above a section |
-| `.grid-cards` / `.card-item` | Card grid; add `.night` for the teal variant |
+| `.grid-cards` / `.card-item` | Card grid; a trailing `[… →](){.no-rule}` link becomes the card's ember "next step" |
 | `.note-box` | Teal-bordered callout |
-| `.pub-list` | Numbered publication list with badge numerals |
+| `.updates` | Wrap a definition list to get the date-column layout on the home page |
+| `.pub-list` / `.pub-featured` | Publication list and the featured band; markup comes from the generator |
 | `.status-tag` | Small outlined tag, e.g. "Under review" |
 | `.btn-ember` / `.btn-outline-ink` | Buttons |
 

@@ -16,7 +16,7 @@ the appropriate test with worked examples in both R and Python.
 [Open the chooser →](https://michelerenard.github.io/clif-chooser/){.no-rule}
 :::
 
-::: {.card-item .night}
+::: {.card-item}
 #### ICEE 2026 programme
 A single-page, searchable schedule for the International Conference on
 Environmental Ergonomics 2026 in Kuching, with full plenary and symposium

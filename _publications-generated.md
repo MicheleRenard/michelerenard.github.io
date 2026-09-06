@@ -2,26 +2,171 @@
 
 ::: {.pub-list}
 
-1. George, C. V., Bell, Z., … **Renard, M.**, … Lavelle, F. (2026). Pregnancy and postpartum nutritional wants and needs in athletes: a cross-sectional survey in the United Kingdom and Republic of Ireland. *Performance Nutrition*, **2**(1), 14. [doi:10.1186/s44410-026-00030-0](https://doi.org/10.1186/s44410-026-00030-0)
-
-2. **Renard, M.**, Bell, Z., Jamshidvand, M., Mai, Z., McCloat, A., Mooney, E., Hollywood, L., & Lavelle, F. (2025). Domestic cooking and food behaviours during the COVID-19 pandemic and the cost-of-living crisis: A scoping review. *Appetite*, **216**, 108311. [doi:10.1016/j.appet.2025.108311](https://doi.org/10.1016/j.appet.2025.108311)
-
-3. Camp, R., Witard, O. C., **Renard, M.**, Ó Catháin, C., & Lavelle, F. (2025). Do athletes cook? A systematic scoping review of culinary nutrition in athletes. *Nutrition Bulletin*. [doi:10.1111/nbu.70012](https://doi.org/10.1111/nbu.70012)
-
-4. Buckley, J., Araujo, J. A., … **Renard, M.**, … Zainol, I. (2024). How transparent are quantitative studies in contemporary technology education research? Instrument development and analysis. *International Journal of Technology and Design Education*, **34**(2), 461–483. [doi:10.1007/s10798-023-09827-9](https://doi.org/10.1007/s10798-023-09827-9)
-
-5. Taim, B. C., Ó Catháin, C., **Renard, M.**, Elliott-Sale, K. J., Madigan, S., & Ní Chéilleachair, N. (2023). The prevalence of menstrual cycle disorders and menstrual cycle-related symptoms in female athletes: A systematic literature review. *Sports Medicine*, **53**(10), 1963–1984. [doi:10.1007/s40279-023-01871-8](https://doi.org/10.1007/s40279-023-01871-8)
-
-6. **Renard, M.**, Kelly, D. T., Ní Chéilleachair, N., Lavelle, F., & Ó Catháin, C. (2023). Cooking and food skills confidence of team sport athletes in Ireland. *Nutrition Bulletin*, **48**(3), 329–342. [doi:10.1111/nbu.12625](https://doi.org/10.1111/nbu.12625)
-
-7. **Renard, M.**, Anton-Solanas, A., Kelly, D. T., & Ó Catháin, C. (2022). Evaluation of nutrition knowledge in elite and sub-elite Gaelic football players. *Science and Medicine in Football*, **6**(1), 82–88. [doi:10.1080/24733938.2021.1883195](https://doi.org/10.1080/24733938.2021.1883195)
-
-8. Buckley, J., Adams, L., … **Renard, M.**, … Zhang, L. (2022). An assessment of the transparency of contemporary technology education research employing interview-based methodologies. *International Journal of Technology and Design Education*, **32**(4), 1963–1982. [doi:10.1007/s10798-021-09695-1](https://doi.org/10.1007/s10798-021-09695-1)
-
-9. **Renard, M.**, Kelly, D. T., Ní Chéilleachair, N., & Ó Catháin, C. (2021). How does the dietary intake of female field-based team sport athletes compare to dietary recommendations for health and performance? A systematic literature review. *Nutrients*, **13**(4), 1235. [doi:10.3390/nu13041235](https://doi.org/10.3390/nu13041235)
-
-10. **Renard, M.**, Kelly, D. T., Ní Chéilleachair, N., & Ó Catháin, C. (2020). Evaluation of nutrition knowledge in female Gaelic games players. *Sports*, **8**(12), 154. [doi:10.3390/sports8120154](https://doi.org/10.3390/sports8120154)
-
-11. Ó Catháin, C., Fleming, J., **Renard, M.**, & Kelly, D. T. (2020). Dietary intake of Gaelic football players during game preparation and recovery. *Sports*, **8**(5), 62. [doi:10.3390/sports8050062](https://doi.org/10.3390/sports8050062)
+```{=html}
+<div class="pub-entry" id="pub-george2026pregnancy">
+<p class="pub-title"><a href="https://doi.org/10.1186/s44410-026-00030-0">Pregnancy and postpartum nutritional wants and needs in athletes: a cross-sectional survey in the United Kingdom and Republic of Ireland</a></p>
+<p class="pub-meta">George, C. V., Bell, Z., … <strong>Renard, M.</strong>, … Lavelle, F. (2026). <em>Performance Nutrition</em>, <strong>2</strong>(1), 14.</p>
+<p class="pub-links"><a href="https://doi.org/10.1186/s44410-026-00030-0">doi:10.1186/s44410-026-00030-0</a></p>
+<pre class="pub-bib" hidden>@article{george2026pregnancy,
+  author = {George, Catherine V. and Bell, Zoë and Renard, Michèle and Brown, Elizabeth and Kloskowska, Paulina and Edwards, Laura and Newman, Alexandra and Rauber, Andri and Flynn, Angela C. and Lavelle, Fiona},
+  title = {Pregnancy and postpartum nutritional wants and needs in athletes: a cross-sectional survey in the United Kingdom and Republic of Ireland},
+  journal = {Performance Nutrition},
+  year = {2026},
+  volume = {2},
+  number = {1},
+  pages = {14},
+  doi = {10.1186/s44410-026-00030-0}
+}</pre>
+</div>
+<div class="pub-entry" id="pub-renard2025domestic">
+<p class="pub-title"><a href="https://doi.org/10.1016/j.appet.2025.108311">Domestic cooking and food behaviours during the COVID-19 pandemic and the cost-of-living crisis: A scoping review</a></p>
+<p class="pub-meta"><strong>Renard, M.</strong>, Bell, Z., Jamshidvand, M., Mai, Z., McCloat, A., Mooney, E., Hollywood, L., &amp; Lavelle, F. (2025). <em>Appetite</em>, <strong>216</strong>, 108311.</p>
+<p class="pub-links"><a href="https://doi.org/10.1016/j.appet.2025.108311">doi:10.1016/j.appet.2025.108311</a></p>
+<pre class="pub-bib" hidden>@article{renard2025domestic,
+  author = {Renard, Michèle and Bell, Zoë and Jamshidvand, Mahrokh and Mai, Zhixin and McCloat, Amanda and Mooney, Elaine and Hollywood, Lynsey and Lavelle, Fiona},
+  title = {Domestic cooking and food behaviours during the COVID-19 pandemic and the cost-of-living crisis: A scoping review},
+  journal = {Appetite},
+  year = {2025},
+  volume = {216},
+  pages = {108311},
+  doi = {10.1016/j.appet.2025.108311}
+}</pre>
+</div>
+<div class="pub-entry" id="pub-camp2025do">
+<p class="pub-title"><a href="https://doi.org/10.1111/nbu.70012">Do athletes cook? A systematic scoping review of culinary nutrition in athletes</a></p>
+<p class="pub-meta">Camp, R., Witard, O. C., <strong>Renard, M.</strong>, Ó Catháin, C., &amp; Lavelle, F. (2025). <em>Nutrition Bulletin</em>, <strong>51</strong>(3), 322–336.</p>
+<p class="pub-links"><a href="https://doi.org/10.1111/nbu.70012">doi:10.1111/nbu.70012</a></p>
+<pre class="pub-bib" hidden>@article{camp2025do,
+  author = {Camp, Rachael and Witard, Oliver C. and Renard, Michèle and Catháin, Ciarán Ó. and Lavelle, Fiona},
+  title = {Do athletes cook? A systematic scoping review of culinary nutrition in athletes},
+  journal = {Nutrition Bulletin},
+  year = {2025},
+  volume = {51},
+  number = {3},
+  pages = {322--336},
+  doi = {10.1111/nbu.70012}
+}</pre>
+</div>
+<div class="pub-entry" id="pub-buckley2024how">
+<p class="pub-title"><a href="https://doi.org/10.1007/s10798-023-09827-9">How transparent are quantitative studies in contemporary technology education research? Instrument development and analysis</a></p>
+<p class="pub-meta">Buckley, J., Araujo, J. A., … <strong>Renard, M.</strong>, … Zainol, I. (2024). <em>International Journal of Technology and Design Education</em>, <strong>34</strong>(2), 461–483.</p>
+<p class="pub-links"><a href="https://doi.org/10.1007/s10798-023-09827-9">doi:10.1007/s10798-023-09827-9</a></p>
+<pre class="pub-bib" hidden>@article{buckley2024how,
+  author = {Buckley, Jeffrey and Araujo, Jeovan A. and Aribilola, Ifeoluwapo and Arshad, Iram and Azeem, Muhammad and Buckley, Ciara and Fagan, Alison and Fitzpatrick, Daniel P. and Garza Herrera, Diana A. and Hyland, Tomás and Imtiaz, Muhammad Babar and Khan, Muhammad Bilal and Lanzagorta Garcia, Eduardo and Moharana, Bhagyabati and Mohd Sufian, Mohd Sufino Zuhaily and Osterwald, Katja Magdalena and Phelan, Joseph and Platonava, Anastasia and Reid, Clodagh and Renard, Michèle and Rodriguez Barroso, Laura G. and Scully, Jeremiah and Silva Nunes Bezerra, Gilberto and Szank, Tomasz and Tahir, Mehwish and Teehan, Mairéad and Vijayakumar, Sowmya and Zainol, Ismin},
+  title = {How transparent are quantitative studies in contemporary technology education research? Instrument development and analysis},
+  journal = {International Journal of Technology and Design Education},
+  year = {2024},
+  volume = {34},
+  number = {2},
+  pages = {461--483},
+  doi = {10.1007/s10798-023-09827-9}
+}</pre>
+</div>
+<div class="pub-entry" id="pub-taim2023the">
+<p class="pub-title"><a href="https://doi.org/10.1007/s40279-023-01871-8">The prevalence of menstrual cycle disorders and menstrual cycle-related symptoms in female athletes: A systematic literature review</a></p>
+<p class="pub-meta">Taim, B. C., Ó Catháin, C., <strong>Renard, M.</strong>, Elliott-Sale, K. J., Madigan, S., &amp; Ní Chéilleachair, N. (2023). <em>Sports Medicine</em>, <strong>53</strong>(10), 1963–1984.</p>
+<p class="pub-links"><a href="https://doi.org/10.1007/s40279-023-01871-8">doi:10.1007/s40279-023-01871-8</a></p>
+<pre class="pub-bib" hidden>@article{taim2023the,
+  author = {Taim, Bernadette Cherianne and Ó Catháin, Ciarán and Renard, Michèle and Elliott-Sale, Kirsty Jayne and Madigan, Sharon and Ní Chéilleachair, Niamh},
+  title = {The prevalence of menstrual cycle disorders and menstrual cycle-related symptoms in female athletes: A systematic literature review},
+  journal = {Sports Medicine},
+  year = {2023},
+  volume = {53},
+  number = {10},
+  pages = {1963--1984},
+  doi = {10.1007/s40279-023-01871-8}
+}</pre>
+</div>
+<div class="pub-entry" id="pub-renard2023cooking">
+<p class="pub-title"><a href="https://doi.org/10.1111/nbu.12625">Cooking and food skills confidence of team sport athletes in Ireland</a></p>
+<p class="pub-meta"><strong>Renard, M.</strong>, Kelly, D. T., Ní Chéilleachair, N., Lavelle, F., &amp; Ó Catháin, C. (2023). <em>Nutrition Bulletin</em>, <strong>48</strong>(3), 329–342.</p>
+<p class="pub-links"><a href="https://doi.org/10.1111/nbu.12625">doi:10.1111/nbu.12625</a></p>
+<pre class="pub-bib" hidden>@article{renard2023cooking,
+  author = {Renard, Michèle and Kelly, David T. and Ní Chéilleachair, Niamh and Lavelle, Fiona and Ó Catháin, Ciarán},
+  title = {Cooking and food skills confidence of team sport athletes in Ireland},
+  journal = {Nutrition Bulletin},
+  year = {2023},
+  volume = {48},
+  number = {3},
+  pages = {329--342},
+  doi = {10.1111/nbu.12625}
+}</pre>
+</div>
+<div class="pub-entry" id="pub-renard2022evaluation">
+<p class="pub-title"><a href="https://doi.org/10.1080/24733938.2021.1883195">Evaluation of nutrition knowledge in elite and sub-elite Gaelic football players</a></p>
+<p class="pub-meta"><strong>Renard, M.</strong>, Anton-Solanas, A., Kelly, D. T., &amp; Ó Catháin, C. (2022). <em>Science and Medicine in Football</em>, <strong>6</strong>(1), 82–88.</p>
+<p class="pub-links"><a href="https://doi.org/10.1080/24733938.2021.1883195">doi:10.1080/24733938.2021.1883195</a></p>
+<pre class="pub-bib" hidden>@article{renard2022evaluation,
+  author = {Renard, Michèle and Anton-Solanas, Ana and Kelly, David T. and Ó Catháin, Ciarán},
+  title = {Evaluation of nutrition knowledge in elite and sub-elite Gaelic football players},
+  journal = {Science and Medicine in Football},
+  year = {2022},
+  volume = {6},
+  number = {1},
+  pages = {82--88},
+  doi = {10.1080/24733938.2021.1883195}
+}</pre>
+</div>
+<div class="pub-entry" id="pub-buckley2022an">
+<p class="pub-title"><a href="https://doi.org/10.1007/s10798-021-09695-1">An assessment of the transparency of contemporary technology education research employing interview-based methodologies</a></p>
+<p class="pub-meta">Buckley, J., Adams, L., … <strong>Renard, M.</strong>, … Zhang, L. (2022). <em>International Journal of Technology and Design Education</em>, <strong>32</strong>(4), 1963–1982.</p>
+<p class="pub-links"><a href="https://doi.org/10.1007/s10798-021-09695-1">doi:10.1007/s10798-021-09695-1</a></p>
+<pre class="pub-bib" hidden>@article{buckley2022an,
+  author = {Buckley, Jeffrey and Adams, Latif and Aribilola, Ifeoluwapo and Arshad, Iram and Azeem, Muhammad and Bracken, Lauryn and Breheny, Colette and Buckley, Ciara and Chimello, Ismael and Fagan, Alison and Fitzpatrick, Daniel P. and Garza Herrera, Diana and Gomes, Guilherme Daniel and Grassick, Shaun and Halligan, Elaine and Hirway, Amit and Hyland, Tomás and Imtiaz, Muhammad Babar and Khan, Muhammad Bilal and Lanzagorta Garcia, Eduardo and Lennon, Paul and Manaf, Eyman and Meng, Jing and Mohd Sufian, Mohd Sufino Zuhaily and Moraes, Adrielle and Osterwald, Katja Magdalena and Platonava, Anastasia and Reid, Clodagh and Renard, Michèle and Rodriguez-Barroso, Laura G. and Simonassi-Paiva, Bianca and Singh, Maulshree and Szank, Tomasz and Tahir, Mehwish and Vijayakumar, Sowmya and Ward, Cormac and Yan, Xinyu and Zainol, Ismin and Zhang, Lin},
+  title = {An assessment of the transparency of contemporary technology education research employing interview-based methodologies},
+  journal = {International Journal of Technology and Design Education},
+  year = {2022},
+  volume = {32},
+  number = {4},
+  pages = {1963--1982},
+  doi = {10.1007/s10798-021-09695-1}
+}</pre>
+</div>
+<div class="pub-entry" id="pub-renard2021how">
+<p class="pub-title"><a href="https://doi.org/10.3390/nu13041235">How does the dietary intake of female field-based team sport athletes compare to dietary recommendations for health and performance? A systematic literature review</a></p>
+<p class="pub-meta"><strong>Renard, M.</strong>, Kelly, D. T., Ní Chéilleachair, N., &amp; Ó Catháin, C. (2021). <em>Nutrients</em>, <strong>13</strong>(4), 1235.</p>
+<p class="pub-links"><a href="https://doi.org/10.3390/nu13041235">doi:10.3390/nu13041235</a></p>
+<pre class="pub-bib" hidden>@article{renard2021how,
+  author = {Renard, Michèle and Kelly, David T. and Chéilleachair, Niamh Ní and Catháin, Ciarán Ó},
+  title = {How does the dietary intake of female field-based team sport athletes compare to dietary recommendations for health and performance? A systematic literature review},
+  journal = {Nutrients},
+  year = {2021},
+  volume = {13},
+  number = {4},
+  pages = {1235},
+  doi = {10.3390/nu13041235}
+}</pre>
+</div>
+<div class="pub-entry" id="pub-renard2020evaluation">
+<p class="pub-title"><a href="https://doi.org/10.3390/sports8120154">Evaluation of nutrition knowledge in female Gaelic games players</a></p>
+<p class="pub-meta"><strong>Renard, M.</strong>, Kelly, D. T., Ní Chéilleachair, N., &amp; Ó Catháin, C. (2020). <em>Sports</em>, <strong>8</strong>(12), 154.</p>
+<p class="pub-links"><a href="https://doi.org/10.3390/sports8120154">doi:10.3390/sports8120154</a></p>
+<pre class="pub-bib" hidden>@article{renard2020evaluation,
+  author = {Renard, Michèle and Kelly, David T. and Chéilleachair, Niamh Ní and Catháin, Ciarán Ó},
+  title = {Evaluation of nutrition knowledge in female Gaelic games players},
+  journal = {Sports},
+  year = {2020},
+  volume = {8},
+  number = {12},
+  pages = {154},
+  doi = {10.3390/sports8120154}
+}</pre>
+</div>
+<div class="pub-entry" id="pub-cathin2020dietary">
+<p class="pub-title"><a href="https://doi.org/10.3390/sports8050062">Dietary intake of Gaelic football players during game preparation and recovery</a></p>
+<p class="pub-meta">Ó Catháin, C., Fleming, J., <strong>Renard, M.</strong>, &amp; Kelly, D. T. (2020). <em>Sports</em>, <strong>8</strong>(5), 62.</p>
+<p class="pub-links"><a href="https://doi.org/10.3390/sports8050062">doi:10.3390/sports8050062</a></p>
+<pre class="pub-bib" hidden>@article{cathin2020dietary,
+  author = {Ó Catháin, Ciarán and Fleming, James and Renard, Michèle and Kelly, David T.},
+  title = {Dietary intake of Gaelic football players during game preparation and recovery},
+  journal = {Sports},
+  year = {2020},
+  volume = {8},
+  number = {5},
+  pages = {62},
+  doi = {10.3390/sports8050062}
+}</pre>
+</div>
+```
 
 :::
